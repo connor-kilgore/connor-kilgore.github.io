@@ -3,6 +3,14 @@ html{
 }
 
 .text-body{
+	left-margin: 10em;
+	right-margin: auto;
 	width: 20em;
 	text-align: justify;
+}
+
+.grid
+{
+	display: grid;
+	grid-template-columns: 50% 50%;
 }
