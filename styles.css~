@@ -1,3 +1,8 @@
 html{
-	background-color: gold;
+	background-color: LightGoldenRodYellow;
+}
+
+.text-body{
+	width: 20em;
+	text-align: justify;
 }
