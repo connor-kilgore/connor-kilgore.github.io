@@ -19,4 +19,9 @@ html{
 .selfPhoto
 {
 	width: 1fr 1fr;
+	grid-column: 2;
+}
+
+.about-text{
+	grid-column: 1;
 }

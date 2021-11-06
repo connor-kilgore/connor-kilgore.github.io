@@ -7,6 +7,7 @@ html{
 	right-margin: auto;
 	width: 20em;
 	text-align: justify;
+	grid-column: 1;
 }
 
 .grid
@@ -22,6 +23,3 @@ html{
 	grid-column: 2;
 }
 
-.about-text{
-	grid-column: 1;
-}
