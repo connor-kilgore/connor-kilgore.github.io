@@ -7,19 +7,21 @@ html{
 	right-margin: auto;
 	width: 20em;
 	text-align: justify;
-	grid-column: 1;
 }
 
 .grid
 {
 	display: grid;
-	grid-template-columns: 50% 50%;
+	grid-template-columns: 1fr 1fr;
 	justify-items: center;
 }
 
 .selfPhoto
 {
-	width: 1fr 1fr;
+	width: 20em;
 	grid-column: 2;
 }
 
+.about-text{
+	grid-column: 1;
+}

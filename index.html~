@@ -8,7 +8,7 @@
 
 	<body>
 		<img src="photos/resume_photo.jpg" class="selfPhoto">
-		<section class="text-body about-text">
+		<section class="text-body">
 			<h2> About </h2>
 			<p>Hello! my name is Connor Kilgore, I am an american software developer. I am studying for my
 			BA in computer science at <a href="https://www.nau.edu">Northern Arizona University</a>. I am particularly interested
