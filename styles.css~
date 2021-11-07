@@ -3,9 +3,8 @@ html{
 }
 
 .text-body{
-	left-margin: 10em;
-	right-margin: auto;
-	width: 20em;
+	margin-left: auto;
+	width: 30em;
 	text-align: justify;
 }
 
@@ -16,6 +15,8 @@ html{
 	grid-template-rows: 1fr;
 	justify-items: center;
 	grid-gap: 5em;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .selfPhoto
@@ -29,4 +30,8 @@ html{
 .about-text{
 	grid-column: 1;
 	grid-row: 1;
+}
+
+.whiteBackground{
+	background-color: white;
 }
