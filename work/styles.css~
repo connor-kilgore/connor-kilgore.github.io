@@ -97,3 +97,8 @@ html{
 .selected{
 	text-decoration: underline;
 }
+
+.kingsReach{
+	grid-row: 3;
+	grid-column: 1;
+}
