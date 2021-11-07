@@ -15,14 +15,15 @@ html{
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr;
 	justify-items: center;
+	grid-gap: 5em;
 }
 
 .selfPhoto
 {
+	margin-right:auto;
 	width: 20em;
 	grid-column: 2;
 	grid-row: 1;
-	grid-gap: 5em; 
 }
 
 .about-text{

@@ -3,9 +3,8 @@ html{
 }
 
 .text-body{
-	left-margin: 10em;
-	right-margin: auto;
-	width: 20em;
+	margin-left: auto;
+	width: 30em;
 	text-align: justify;
 }
 
@@ -15,11 +14,14 @@ html{
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr;
 	justify-items: center;
-	grid-gap: 5em; 
+	grid-gap: 5em;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .selfPhoto
 {
+	margin-right:auto;
 	width: 20em;
 	grid-column: 2;
 	grid-row: 1;
