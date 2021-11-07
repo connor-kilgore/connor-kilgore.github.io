@@ -21,6 +21,8 @@ html{
 
 .selfPhoto
 {
+	padding: 2em;
+	background-color: white;
 	margin-right:auto;
 	width: 20em;
 	grid-column: 2;
