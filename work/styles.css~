@@ -21,7 +21,7 @@ html{
 {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 10% 10% 1fr 1fr 1fr;
+	grid-template-rows: 70px 70px 1fr 1fr 1fr;
 	justify-items: center;
 	grid-gap: 5em;
 	margin-left: auto;
