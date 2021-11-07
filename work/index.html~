@@ -31,6 +31,7 @@
 			angles: 0, 90, 180 and 270 degrees. With improvement in the formula used, any angle should be compatible
 			when loading the models. Additionally I would remove the models I used in this game from an online database
 			and recreate them as my own custom models.
+			</p>
 		</section>
 	</body>
 </html>
