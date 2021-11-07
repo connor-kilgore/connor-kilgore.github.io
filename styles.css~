@@ -34,4 +34,6 @@ html{
 
 .whiteBackground{
 	background-color: white;
+	margin-top: 10%;
+	margin-bottom: 10%;
 }
