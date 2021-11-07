@@ -49,11 +49,13 @@ html{
 
 .headerGrid{
 	display: grid;
-	grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr;
+	grid-template-columns: 2fr 5fr 1fr 1fr 1fr 1fr;
 	grid-template-rows: 1fr;
 }
 
 .homeBut{
+	margin-left: auto;
+	margin-right: auto;
 	grid-row: 1;
 	grid-column: 1;
 }
@@ -77,4 +79,9 @@ html{
 .contactBut{
 	grid-row: 1;
 	grid-column: 6;
+}
+
+.linkFormat{
+	text-decoration: none;
+	color: black;
 }

@@ -8,7 +8,7 @@
 
 	<body class="grid">
 		<section class="whiteHeaderBar headerGrid">
-			<h2><a href ="">Connor Kilgore</a></h2>
+			<h2 class="homeBut"><a href ="">Connor Kilgore</a></h2>
 			<h3 class="aboutBut selected">About</h3>
 			<h3 class="workBut"><a href ="">Work</h3>
 			<h3 class="resumeBut"><a href ="">Resume</h3>
