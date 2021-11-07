@@ -30,6 +30,14 @@ html{
 }
 
 .about-text{
-	grid-column: 1;
+	margin-top: auto;
+	margin-bottom: auto;
+	padding: 2em;
+	background-color: white;
+	grid-column: 1;i
 	grid-row: 1;
+}
+
+.whiteHeaderBar{
+	background-color: white;
 }

@@ -37,3 +37,7 @@ html{
 	grid-column: 1;i
 	grid-row: 1;
 }
+
+.whiteHeaderBar{
+	background-color: white;
+}
