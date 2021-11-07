@@ -4,10 +4,11 @@
 		<title> Connor Kilgore - Portfolio </title>
 
 		<link href="styles.css" rel= "styleSheet">
+
+		<div class="whiteHeaderBar"></div>
 	</head>
 
 	<body class="grid">
-		<div class="whiteHeaderBar"></div>
 		<img src="photos/resume_photo.jpg" class="selfPhoto">
 		<section class="text-body about-text">
 			<h2> About </h2>
