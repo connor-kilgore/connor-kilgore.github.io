@@ -80,3 +80,8 @@ html{
 	grid-row: 1;
 	grid-column: 6;
 }
+
+.linkFormat{
+	text-decoration: none;
+	color: black;
+}

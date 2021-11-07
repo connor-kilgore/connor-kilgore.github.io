@@ -63,7 +63,6 @@ html{
 .aboutBut{
 	grid-row: 1;
 	grid-column: 3;
-	text-decoration: underline;
 }
 
 .workBut{
@@ -84,4 +83,8 @@ html{
 .linkFormat{
 	text-decoration: none;
 	color: black;
+}
+
+.selected{
+	text-decoration: underline;
 }
