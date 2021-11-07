@@ -3,30 +3,16 @@
 	<head>
 		<title> Connor Kilgore - Portfolio </title>
 
-		<link href="../styles.css" rel= "styleSheet">
+		<link href="styles.css" rel= "styleSheet">
 	</head>
 
 	<body class="grid">
 		<section class="whiteHeaderBar headerGrid">
 			<h2 class="homeBut"><a href =".." class="linkFormat">Connor Kilgore</a></h2>
-			<h3 class="aboutBut"><a href =".." class="linkFormat">About</h3>
+			<h3 class="aboutBut"><a href =".." class="linkFormat">About</a></h3>
 			<h3 class="workBut selected">Work</h3>
-			<h3 class="resumeBut"><a href ="../resume/index.html" class="linkFormat">Resume</h3>
-			<h3 class="contactBut"><a href ="../contact/index.html" class="linkFormat">Contact</h3>
-		</section>
-
-		<img src="../photos/resume_photo.jpg" class="selfPhoto">
-		<section class="text-body about-text">
-			<h2> About </h2>
-			<p>Hello! my name is Connor Kilgore, I am an american software developer. I am studying for my
-			BA in computer science at <a href="https://www.nau.edu">Northern Arizona University</a>. I am particularly interested
-			in full stack development and most proficient in Java.</p>
-			<p> Outside of school work, I am passionate about my personal computer science related projects. Particularly
-			I like to make games on the platform <a href="https://www.roblox.com">Roblox</a>. More information on that can
-			be seen in my "Work" section.</p>
-			<p> I also have many hobbies, I love to play video games, watch horror movies and anime, read sci-fi fantasy
-			novels, and learn about astronomy.</p>
-			<p> I am currently looking for a junior developer internship position for summer 2022!</p>
+			<h3 class="resumeBut"><a href ="../resume/index.html" class="linkFormat">Resume</a></h3>
+			<h3 class="contactBut"><a href ="../contact/index.html" class="linkFormat">Contact</a></h3>
 		</section>
 	</body>
 </html>
