@@ -3,13 +3,13 @@
 	<head>
 		<title> Connor Kilgore - Portfolio </title>
 
-		<link href="styles.css" rel= "../styleSheet">
+		<link href="../styles.css" rel= "styleSheet">
 	</head>
 
 	<body class="grid">
 		<section class="whiteHeaderBar headerGrid">
 			<h2 class="homeBut"><a href =".." class="linkFormat">Connor Kilgore</a></h2>
-			<h3 class="aboutBut"><a href =".." About>About</h3>
+			<h3 class="aboutBut"><a href =".." class="linkFormat">About</h3>
 			<h3 class="workBut selected">Work</h3>
 			<h3 class="resumeBut"><a href ="../resume/index.html" class="linkFormat">Resume</h3>
 			<h3 class="contactBut"><a href ="../contact/index.html" class="linkFormat">Contact</h3>
