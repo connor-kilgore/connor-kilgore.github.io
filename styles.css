@@ -46,3 +46,35 @@ html{
 	grid-row: 1;
 	grid-column: 1 / 3;
 }
+
+.headerGrid{
+	display: grid;
+	grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
+}
+
+.homeBut{
+	grid-row: 1;
+	grid-column: 1;
+}
+
+.aboutBut{
+	grid-row: 1;
+	grid-column: 3;
+	text-decoration: underline;
+}
+
+.workBut{
+	grid-row: 1;
+	grid-column: 4;
+}
+
+.resumeBut{
+	grid-row: 1;
+	grid-column: 5;
+}
+
+.contactBut{
+	grid-row: 1;
+	grid-column: 6;
+}
