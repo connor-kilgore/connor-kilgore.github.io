@@ -12,7 +12,7 @@ html{
 {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr;
+	grid-template-rows: 1fr 9fr;
 	justify-items: center;
 	grid-gap: 5em;
 	margin-left: auto;
@@ -26,7 +26,7 @@ html{
 	margin-right:auto;
 	width: 20em;
 	grid-column: 2;
-	grid-row: 1;
+	grid-row: 2;
 }
 
 .about-text{
@@ -34,10 +34,12 @@ html{
 	margin-bottom: auto;
 	padding: 2em;
 	background-color: white;
-	grid-column: 1;i
-	grid-row: 1;
+	grid-column: 1;
+	grid-row: 2;
 }
 
 .whiteHeaderBar{
 	background-color: white;
+	grid-row: 1;
+	grid-column: 1 / 2;
 }
