@@ -17,6 +17,7 @@ html{
 	grid-gap: 5em;
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 0em;
 }
 
 .selfPhoto
@@ -41,5 +42,5 @@ html{
 .whiteHeaderBar{
 	background-color: white;
 	grid-row: 1;
-	grid-column: 1 / 2;
+	grid-column: 1 / 3;
 }
