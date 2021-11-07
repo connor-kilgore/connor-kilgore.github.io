@@ -31,9 +31,3 @@ html{
 	grid-column: 1;
 	grid-row: 1;
 }
-
-.whiteBackground{
-	background-color: white;
-	margin-top: 10%;
-	margin-bottom: 10%;
-}
