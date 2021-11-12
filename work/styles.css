@@ -117,3 +117,13 @@ html{
 	padding: 2em;
 	background-color: white;
 }
+
+.raytrace1{
+	grid-row: 4;
+	grid-column: 1;
+}
+
+.raytrace2{
+	grid-row: 4;
+	grid-column: 2;
+}
