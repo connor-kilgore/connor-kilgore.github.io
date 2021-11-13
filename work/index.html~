@@ -14,10 +14,10 @@
 			<h3 class="resumeBut"><a href ="../resume/index.html" class="linkFormat">Resume</a></h3>
 			<h3 class="contactBut"><a href ="mailto:connor.kilgore@gmail.com" class="linkFormat">Contact</a></h3>
 		</section>
-		
-		<h2 class="header">KingsReach</h2>
 
 		<section class="kingsReach">
+
+			<h2 class="header">KingsReach</h2>
 	
 			<img src="../photos/gameThumbnail.png" class="kingsReachPic1">
 			
@@ -45,6 +45,12 @@
 
 			<iframe class="raytrace2" width="420" height="315" src="https://www.youtube.com/embed/Jto8pqrSvOk" allowfullscreen>
 			</iframe>
+		</section>
+
+		<section class="monsterKid">
+
+			<h2 class="header">Monster Kid</h2>
+
 		</section>
 	</body>
 </html>
