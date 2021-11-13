@@ -101,14 +101,13 @@ html{
 .kingsReach{
 	grid-row: 3;
 	grid-column: 1;
-	margin-left: auto;
-	width: 25em;
-	padding: 2em;
-	background-color: white;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 70px 1fr;
 }
 
 .kingsReachPic1{
-	grid-row: 3;
+	grid-row: 1;
 	grid-column: 2;
 	width: 20em;
 	margin-right: auto;
@@ -118,19 +117,25 @@ html{
 	background-color: white;
 }
 
+.kingsReach > p{
+	margin-left: auto;
+	width: 25em;
+	padding: 2em;
+	background-color: white;
+}
 .raytrace1{
 	margin-left: auto;
-	grid-row: 5;
+	grid-row: 3;
 	grid-column: 1;
 }
 
 .raytrace2{
 	margin-right: auto;
-	grid-row: 5;
+	grid-row: 3;
 	grid-column: 2;
 }
 
 .rayTraceHeader{
-	grid-row: 4;
+	grid-row: 2;
 	grid-column: 1/3;
 }
