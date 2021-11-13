@@ -21,7 +21,7 @@ html{
 {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 70px 70px 1fr 1fr 1fr;
+	grid-template-rows: 70px 70px 1fr 70px 1fr;
 	justify-items: center;
 	grid-column-gap: 5em;
 	margin-left: auto;
@@ -116,4 +116,21 @@ html{
 	margin-bottom: auto;
 	padding: 2em;
 	background-color: white;
+}
+
+.raytrace1{
+	margin-left: auto;
+	grid-row: 5;
+	grid-column: 1;
+}
+
+.raytrace2{
+	margin-right: auto;
+	grid-row: 5;
+	grid-column: 2;
+}
+
+.rayTraceHeader{
+	grid-row: 4;
+	grid-column: 1/3;
 }
