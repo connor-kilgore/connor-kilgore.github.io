@@ -21,7 +21,7 @@
 	
 			<img src="../photos/gameThumbnail.png" class="kingsReachPic1">
 			
-			<section class="kingsReachText">
+			<section class="kingsReachText text-element">
 				<p>"Kings Reach" is the first game I developed on Roblox. The development of this game took place over
 				six months from May to November of 2020. This game is an RPG style community interaction game.</p>
 				<p>This game more than anything was a learning process for me, it was my first exposure to self projects
@@ -47,7 +47,7 @@
 			</iframe>
 		</section>
 
-		<section class="monsterKid">
+		<section class="monsterKid text-element">
 
 			<h2 class="header">Monster Kid</h2>
 
