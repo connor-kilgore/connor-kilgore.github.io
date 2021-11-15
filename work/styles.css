@@ -126,11 +126,15 @@ html{
 .kingsReachText{
 	grid-row: 2;
 	grid-column: 1;
+}
+
+.text-element{
 	margin-left: auto;
 	width: 25em;
 	padding: 2em;
 	background-color: white;
 }
+
 .raytrace1{
 	margin-left: auto;
 	grid-row: 4;

@@ -17,13 +17,13 @@
 
 		<section class="kingsReach">
 
-			<h2 class="header">KingsReach</h2>
+			<h2 class="header">Kings Reach</h2>
 	
 			<img src="../photos/gameThumbnail.png" class="kingsReachPic1">
 			
 			<section class="kingsReachText">
 				<p>"Kings Reach" is the first game I developed on Roblox. The development of this game took place over
-				six months from May to November of 2020.</p>
+				six months from May to November of 2020. This game is an RPG style community interaction game.</p>
 				<p>This game more than anything was a learning process for me, it was my first exposure to self projects
 				and discovering the process of researching and problem solving without guidance from professors
 				or mentors. Using the platform that Roblox provides as well as the coding language was all new to me and I racked up
@@ -50,6 +50,32 @@
 		<section class="monsterKid">
 
 			<h2 class="header">Monster Kid</h2>
+
+			<section class="monsterKidText">
+				<p>"After my learning experience with King's Reach I sought after Monster Kid as a first real attempt
+				at creating a game suited for the market on Roblox. This was developed over six months from December
+				2020 to June 2021. This is a mini-game style game designed to have replayability value.</p>
+				<p>The main things I learned from this game was picking up skills outside outside of my expertise,
+				creating a lobby/matchmaking system that can start and end games, and pressing my game onto social
+				media platforms.<p>
+				<p> What I mean by new skills is that I was heavily encumbered by my inability to create unique
+				and professional models in my previous game. I don't have anyone that I can reliably work with to
+				handle that more artistic area so I took the time to practice and learn how to develop models on my own.
+				Everything in Monster Kid is completely original and made by me, that includes the items, player models,
+				the map and even the GUI. The only thing that wasn't made by me was the games thumbnail which I coordinated
+				with someone on Fiverr to make.</p>
+				<p> The lobby system is a seemingly simple but surprisingly complicated system that I designed. It has to
+				intake all the players in the game, randomly select the designated monster, and teleport the players accordingly.
+				During this teleport the game also has to set up the map properly and change the player model of the monster.
+				These are the obvious changes I list, but it actually does a number more of things during this teleport.
+				Additionally when the game ends, everything has to be reset to base state so that no errors occur when the
+				teleport is reinitialized. The debugging process on this was long and took coordinators to help me with
+				hours of just sitting in the lobby and letting me observe the errors that may show up.</p>
+				<p> Dealing with social media is also something I would apply to out of my comfort zone skills.
+				It took lots of research on what the best ways were to get players to notice my game, some of the strategies
+				I tried included making a trailer for my game, posting consistently on Reddit about it and creating a discord
+				server to maintain a community around my games. </p>
+			</section>
 
 		</section>
 	</body>

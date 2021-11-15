@@ -156,4 +156,7 @@ html{
 	grid-template-rows: 70px 1fr;
 }
 
-.monsterKid
+.monsterKid > h2{
+	grid-row: 1;
+	grid-column: 1/3;
+}
