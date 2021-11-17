@@ -12,7 +12,7 @@ html{
 {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 9fr;
+	grid-template-rows: 70px 9fr;
 	justify-items: center;
 	grid-gap: 5em;
 	margin-left: auto;
@@ -63,7 +63,6 @@ html{
 .aboutBut{
 	grid-row: 1;
 	grid-column: 3;
-	text-decoration: underline;
 }
 
 .workBut{
@@ -84,4 +83,8 @@ html{
 .linkFormat{
 	text-decoration: none;
 	color: black;
+}
+
+.selected{
+	text-decoration: underline;
 }
