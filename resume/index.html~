@@ -9,7 +9,7 @@
 	<body class="grid">
 		<section class="whiteHeaderBar headerGrid">
 			<h2 class="homeBut"><a href ="" class="linkFormat">Connor Kilgore</a></h2>
-			<h3 class="aboutBut"><a href=".." class="linkFormat">About</a></h3>
+			<h3 class="aboutBut"><a href =".." class="linkFormat">About</a></h3>
 			<h3 class="workBut"><a href ="../work/index.html" class="linkFormat">Work</a></h3>
 			<h3 class="resumeBut selected"><a href ="../resume/index.html" class="linkFormat">Resume</a></h3>
 			<h3 class="contactBut"><a href ="mailto:connor.kilgore@gmail.com"
