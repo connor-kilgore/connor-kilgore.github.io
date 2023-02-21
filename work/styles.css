@@ -104,7 +104,7 @@ html{
 	grid-column-gap: 2em;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 70px 1fr 70px 1fr;
+	grid-template-rows: 70px 1fr 200px 1fr;
 }
 
 .kingsReach > h2{
