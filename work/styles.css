@@ -21,7 +21,7 @@ html{
 {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 70px 65em 50em 1fr;
+	grid-template-rows: 70px 50em 40em 72em 1fr 1fr;
 	justify-items: center;
 	grid-column-gap: 5em;
 	margin-left: auto;
@@ -99,12 +99,12 @@ html{
 }
 
 .kingsReach{
-	grid-row: 2;
+	grid-row: 3;
 	grid-column: 1/3;
 	grid-column-gap: 2em;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 70px 1fr 200px 1fr;
+	grid-template-rows: 70px 1fr;
 }
 
 .kingsReach > h2{
@@ -123,9 +123,19 @@ html{
 }
 
 .text-element{
+	margin-right: auto;
 	margin-left: auto;
 	margin-bottom: auto;
 	width: 25em;
+	padding: 2em;
+	background-color: white;
+}
+
+.middle-text{
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: auto;
+	width: 50em;
 	padding: 2em;
 	background-color: white;
 }
@@ -139,25 +149,53 @@ html{
 	background-color: white;
 }
 
-.raytrace1{
-	margin-left: auto;
+.raytrace{
 	grid-row: 4;
+	grid-column: 1/3;
+	grid-row-gap: 2em;
+	grid-column-gap: 2em;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 30px 370px 200px 300px 100px;
+}
+
+.raytrace1{
+	grid-row: 2;
 	grid-column: 1;
 }
 
 .raytrace2{
-	margin-right: auto;
+	grid-row: 2;
+	grid-column: 2;
+}
+
+.raytraceText1{
+	grid-row: 3;
+	grid-column: 1/3;
+}
+
+.raytraceText2{
+	grid-row: 5;
+	grid-column: 1/3;
+}
+
+.raytrace3{
+	grid-row: 4;
+	grid-column: 1;
+}
+
+.raytrace4{
 	grid-row: 4;
 	grid-column: 2;
 }
 
 .rayTraceHeader{
-	grid-row: 3;
+	grid-row: 1;
 	grid-column: 1/3;
 }
 
 .monsterKid{
-	grid-row: 3;
+	grid-row: 5;
 	grid-column: 1/3;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -180,7 +218,7 @@ html{
 }
 
 .boxing{
-	grid-row: 4;
+	grid-row: 6;
 	grid-column: 1/3;
 	display: grid;
 	grid-column-gap: 2em;
@@ -201,4 +239,37 @@ html{
 .qteVid{
 	grid-row: 2;
 	grid-column: 2;
+}
+
+.capstone{
+	grid-row: 2;
+	grid-column: 1/3;
+	display: grid;
+	grid-column-gap: 2em;
+	grid-template-rows: 70px 420px 420px;
+	grid-template-columns: 1fr 1fr;
+}
+
+.capstone > h2{
+	grid-row: 1;
+	grid-column: 1/3;
+}
+
+.capstoneText{
+	grid-row: 2/3;
+	grid-column: 1;
+}
+
+.capstonePic1{
+	grid-row: 2;
+	grid-column: 2;
+}
+
+.capstonePic2{
+	grid-row: 3;
+	grid-column: 2;
+}
+
+.small-photo-element{
+	width: 17em;
 }
