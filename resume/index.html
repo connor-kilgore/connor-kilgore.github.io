@@ -3,23 +3,51 @@
 	<head>
 		<title> Connor Kilgore - Portfolio </title>
 
-		<link href="styles.css" rel= "styleSheet">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="/assets/styles.css">
 	</head>
 
-	<body class="grid">
-		<section class="whiteHeaderBar headerGrid">
-			<h2 class="homeBut"><a href =".." class="linkFormat">Connor Kilgore</a></h2>
-			<h3 class="aboutBut"><a href =".." class="linkFormat">About</a></h3>
-			<h3 class="workBut"><a href ="../work/index.html" class="linkFormat">Work</a></h3>
-			<h3 class="resumeBut selected"><a href ="../resume/index.html" class="linkFormat">Resume</a></h3>
-			<h3 class="contactBut"><a href ="mailto:connor.kilgore@gmail.com"
-					class="linkFormat">Contact</a></h3>
-		</section>
-		
-		<img src="../photos/resumePic.JPG" class="resume">
+	<body>
+		<!-- Navigation header -->
+		<nav data-include="header" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light">
+			<div class="container-fluid">
+				<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+					<ul class="navbar-nav flex-grow-1">
+						<a class="nav-item nav-link rounded" href="/" style="background-color:white; color:black; margin-right: 10px;">Home</a>
+						<a class="nav-item nav-link rounded" href="/work" style="background-color:white; color:black; margin-right: 10px;">Work</a>
+						<a class="nav-item nav-link rounded" href="/resume" style="background-color:white; color:black; margin-right: 10px;">Resume</a>
+						<a class="nav-item nav-link rounded" href ="mailto:connor.kilgore@gmail.com" style="background-color:white; color:black; margin-right: 10px;">Contact</a>
+					</ul>
+				</div>
+			</div>
+		</nav>
 
-		<a href="../photos/Connor_Kilgore_Resume.pdf" download class="download">
-			<h1>Download PDF</h1>
-		</a>
+		<br><br>
+		
+		<div class="row justify-content-md-center">
+			<img src="/assets/photos/resumePic.JPG" class="text-center">
+		</div>
+
+		<br>
+
+		<div class="row justify-content-md-center">
+			<a href="/assets/photos/Connor_Kilgore_Resume.pdf" download class="text-center">
+				<h1>Download PDF</h1>
+			</a>
+		</div>
+
+		<br>
+
+		<div class="row justify-content-md-center">
+			<a href="/assets/photos/Connor_Kilgore_Resume.docx" download class="text-center">
+				<h1>Download Document</h1>
+			</a>
+		</div>
+
+		<br><br><br>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	</body>
 </html>
