@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title> Connor Kilgore - Portfolio </title>
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" href="/assets/styles.css">
+	</head>
+
+	<body>
+		<!-- Navigation header -->
+		<nav data-include="header" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light">
+			<div class="container-fluid">
+				<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+					<ul class="navbar-nav flex-grow-1">
+						<a class="nav-item nav-link rounded" href="/" style="background-color:white; color:black; margin-right: 10px;">Home</a>
+						<a class="nav-item nav-link rounded" href="/work" style="background-color:white; color:black; margin-right: 10px;">Work</a>
+						<a class="nav-item nav-link rounded" href="/blog" style="background-color:white; color:black; margin-right: 10px;">Blog</a>
+						<a class="nav-item nav-link rounded" href="/resume" style="background-color:white; color:black; margin-right: 10px;">Resume</a>
+						<a class="nav-item nav-link rounded" href ="mailto:connor.kilgore@gmail.com" style="background-color:white; color:black; margin-right: 10px;">Contact</a>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<br><br>
+
+		<div class="container bg-light">
+			<br>
+			<div class="row justify-content-center">
+				<h1 class="align-middle text-center"><b>Overview</b></h1>
+			</div>
+
+			<br><br>
+			<div class="row" style="margin: 20px">
+				<p>
+					Welcome, this blog will serve as a log that I will update each work day
+					for my apprenticeship at Clean Coders over the coming months. Eventually this will be archived into my portfolio
+					after the conclusion of my apprenticeship. Here I intend to share my thoughts working at Clean Coders, and express
+					what I have learned and struggled on in detail.
+				</p>
+			</div>
+		</div>
+
+		<div class="container bg-light">
+			<br>
+			<div class="row justify-content-center">
+				<h1 class="align-middle text-center col-10"><b>Day 1 - 2/1/2024</b></h1>
+			</div>
+
+			<br><br>
+			<div class="row" style="margin: 20px">
+				<p>
+					Today was my first day at <b>Clean Coders</b>. Admittedly it was an anxious day as is any first day of a new job.
+					Fortunately everyone was warm and welcoming during my onboarding process. I met some of my potential future colleagues
+					as well as my mentors and bosses.</p>
+				<p>
+					I spoke mostly with Micah and Gina regarding first steps. Micah purchased a Mac Mini
+					for me to use which is exciting. I've never used another OS for software development, but I hope to never go back to Windows,
+					It does not have good command line support after all. Gina helped me with getting my first assignments, one of which is
+					setting up this very blog. I was assigned to set up a github.io site however I made one years ago so all I had to do was add in this new page.
+					Though I'm no expert UX designer, I know how to make it look decent and functional, which is perfect for this ongoing project. Gina also
+					helped me navigate to other applications I'd need for this apprencticeship such as Tuple, IntelliJ, Epic, and Poker.</p>
+				<p>
+					My first real challenge was the <b>Clojure Koans</b> assignment I was given. It serves as an educational guide for me to become familiar with clojure,
+					the primarily used language at Clean Coders. Clojure needless to say is a steep learning curve. It appears to be a less verbose language at the
+					expense of it being much harder to read for inexperienced persons. It also uses prefix notation which I'm no stranger to, but will still take some
+					getting used to.</p>
+				<p>
+					In this assignment I had to fill in unit tests and get them to pass by putting in the right code snippets or parameters. I was given 27 clojure
+					files each with on average around ten tests in them. I got through 14 at the time of writing this entry and I hope to do a few more before I call it a day.
+					Initially it was quite straightforward and easy, I breezed through the first five or six. Then I began hitting tests with answers that needed more
+					understanding of the language to apply my prerequisite knowledge of coding. It was a slow trog for a few hours, I spent it really trying
+					to learn how to read this code and understand how the interpreter read the language. I basically had an answer key by looking at the koans file but it wouldn't help me
+					truly understand, so I used it for reference only.</p>
+				<p>
+					My aha moment finally arrived on the 14th file, recursion. I know recursion, and I know it well, but that also means I know how tricky it can be,
+					especially when learning a new language. I didn't understand fully how loops worked yet and how to pair that with recur in Clojure syntax. It took
+					me a good while just researching and examining these tests to understand them, and then it clicked! With that I was able to come up with my own solution
+					to <b>recursive-reverse</b> and <b>factorial</b> that differed from the answer key. When I am able to splinter off into my own line of thinking and my own
+					approach, instead of hugging the examples and given answers, that is when I know I'm beggining to understand at a fundamental level. At that point I stopped
+					with a feeling of satisfaction in my mind, and believing I have done enough today to share in this blog post.</p>
+
+			</div>
+
+			<div class="row" style="margin: 20px">
+				<img src="/assets/photos/recursive-reverse.png" width="150" class="col">
+				<img src="/assets/photos/factorial.png" width="150" class="col">
+			</div>
+
+			<br><br>
+
+		</div>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	</body>
+</html>
