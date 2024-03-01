@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title> Connor Kilgore - Portfolio </title>
+
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ <link rel="stylesheet" href="/assets/styles.css">
+</head>
+
+<body>
+<!-- Navigation header -->
+<nav data-include="header" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light">
+ <div class="container-fluid">
+  <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+   <ul class="navbar-nav flex-grow-1">
+    <a class="nav-item nav-link rounded" href="/"
+       style="background-color:white; color:black; margin-right: 10px;">Home</a>
+    <a class="nav-item nav-link rounded" href="/work"
+       style="background-color:white; color:black; margin-right: 10px;">Work</a>
+    <a class="nav-item nav-link rounded" href="/blog"
+       style="background-color:white; color:black; margin-right: 10px;">Blog</a>
+    <a class="nav-item nav-link rounded" href="/resume"
+       style="background-color:white; color:black; margin-right: 10px;">Resume</a>
+    <a class="nav-item nav-link rounded" href="mailto:connor.kilgore@gmail.com"
+       style="background-color:white; color:black; margin-right: 10px;">Contact</a>
+   </ul>
+  </div>
+ </div>
+</nav>
+
+<br><br>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
+  <h1 class="align-middle text-center"><b>Overview</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row" style="margin: 20px">
+  <p>
+   Welcome, this blog will serve as a log that I will update each work day
+   for my apprenticeship at Clean Coders over the coming months. Eventually this will be archived into my portfolio
+   after the conclusion of my apprenticeship. Here I intend to share my thoughts working at Clean Coders, and express
+   what I have learned and struggled on in detail.
+  </p>
+ </div>
+</div>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 20 - 2/28/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row justify-content-center" style="margin: 20px">
+
+  <p>
+   Today, as my Wednesday's usually are, was about finalizing my work for the current iteration to be prepared
+   for my IPM tomorrow. After last week, I've put a lot more into ensuring I'm ready to go. I've adopted the
+   practice of running through all my projects of the week and double-checking they are ready to present, meet the
+   requirements, and I've asked any questions if necessary. I feel very confident for my meeting tomorrow as
+   I've improved a lot from the advice I was given last week. My presentation is much more entertaining, my
+   tests are strong, and I've made a massive improvement to my coin changer that I've got memorized.</p>
+  <p>
+   To start, my Tic Tac Toe assignment is fully completed. I completed the game loop, fixed any potential bugs,
+   and cleaned things up, making sure my tests and production code look readable and good. My program
+   works perfectly thanks to my very involved tests. Like I said yesterday, the amount of issues I
+   fixed thanks to my tests was invaluable.</p>
+  <p>
+   After wrapping up my project, I moved onto finalizing my Liskov Substitution Principle presentation. I added
+   in an extra slide and practiced the lines a few times so that I can present without reading a script. I'm clocking
+   my time in around nearly 5 minutes which is an ideal time frame. I'll practice it once or twice tomorrow morning
+   to be completely warmed up and ready to go.</p>
+  <p>
+   I ended my day with more coin-changer work. When I showed it last week, Micah pointed out how my code
+   violated OCP by having a set amount of coins that work in the program (pennies, nickels, dimes, and quarters).
+   To remedy this, I made the coin types open-ended, allowing my program to run smoothly regardless of how
+   many different coins are available and what their individual values are. Not only did this make my code compliant
+   with OCP, I've also removed a ton of duplicate code that wasn't needed in my first solution. An example of my
+   coin types being open-ended is a test that passes with 68, 54, 10, and 1 cent coins to add up to 337 cents.
+  </p>
+
+  <div class="row" style="margin: 20px">
+   <img src="/assets/photos/coin-changer-2.png" width="150" class="col">
+  </div>
+
+ </div>
+
+</div>
+
+<br><br>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 19 - 2/27/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row justify-content-center" style="margin: 20px">
+
+  <p>
+   I made incredible progress today. I got my Tic Tac Toe project working great! The algorithm to be unbeatable is working
+   as expected, all I have left to do is to clean up my formatting and connect the game into a replayable loop. As I'm nearly
+   done with the project, reflecting back I found TDD to be invaluable on keeping my project robust. More times than I can count
+   I made changes that broke older tests and I was able to go back and fix the issues. I'm very happy with the state of my
+   code and it's ability to resist bugs. Putting TDD into practice on a larger scale is very rewarding. I also tried my best to
+   follow the SOLID principles I've learned in depth so far and put those into good practice as well. I took approaches I normally
+   wouldn't for the sake of good design and that lead to my architecture feeling much more professional.</p>
+  <p>
+   On the second half of my day, I put some extra effort into getting my LSP presentation together. I did a bit more research, then put my
+   slides together. Last week, I was advised to make my presentations less meta and more entertaining. I took this to heart and had fun with
+   my presentation this week. I'm feeling pretty confident about my dialogue and the slides. I want to add a bit more content and practice more
+   but it is overall a fairly visual and captivating presentation, while also being informative on the subject at hand. Here's a sneak peek of
+   what I mean. Don't worry it's animated so it doesn't look like this all at once.</p>
+
+  <div class="row" style="margin: 20px">
+   <img src="/assets/photos/LSP.png" width="150" class="col">
+  </div>
+
+ </div>
+
+</div>
+
+<br><br>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 18 - 2/26/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row justify-content-center" style="margin: 20px">
+
+  <p>
+   I felt good after today. This week I have a Tic Tac Toe assignment that is the largest thing I've done in clojure.
+   It's giving me a lot of room for practice and learning because I now have to manage namespaces and dependencies,
+   but I'm also doing a more involved project with TDD. I am really appreciating the moments where my tests are
+   all running, and as a result my program works as I expect. It is a huge improvement from the first time
+   I did this project. It is also incredibly helpful with breaking down the problem into smaller functions. Especially
+   for developing an unbeatable algorithm. When I coded it in java, it was a very long function with multiple loops and
+   lists that constantly changed, needless to say it doesn't translate over to Clojure easily. But I am making sure
+   enough progress because I got about half of the algorithm to work as I'd hoped, tomorrow I am wanting to finish
+   this project off, and start polishing it.</p>
+  <p>
+   I ended my day by doing some additional research on the Liskov Substitution Principle since not only will I want
+   to apply it to my Tic Tac Toe project, but I have to put together a presentation on the subject. Then I found a few
+   ways to improve my coin changer Kata before the end of the day. Tomorrow I plan to put a lot more into these two
+   stories, so I am confident in them and I have them ready for Thursday.
+  </p>
+
+ </div>
+
+</div>
+
+<br><br>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 17 - 2/23/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row justify-content-center" style="margin: 20px">
+
+  <p>I started my day with a nice sandwich of working on my Tic Tac Toe project, going to IPM, then going back to my
+   Tic Tac Toe Project. For starters the IPM was great as usual. I always love to see what stuff people have to demonstrate because getting
+   glimpses of internal development can be fascinating, especially the cloud platform related demos. I gave a quick
+   open closed principle presentation as well, I got good feedback and comments. At the end of it, there was a
+   card game we played which I found to be quite fun having a nice mix of strategy and luck. I might come back to it during
+   my personal time with friends.</p>
+  <p>
+   Both in the morning and after IPM as I mentioned, I worked on my Tic Tac Toe project. The initial few hours was doing
+   some research and practicing dealing with different namespaces in Clojure. I'm still new to that aspect,
+   so it was a bit challenging, but rewarding once I started to understand! By the end of it I was starting to make
+   significant progress, getting my menu UI set up, and creating functions that prepared the start of the game. I'm also
+   making sure to follow TDD and the two SOLID principles I have studied. There was a portion where I initially
+   violated OCP and noticed it, then refactored to be more compliant, I was proud of that achievement.ls</p>
+
+ </div>
+
+</div>
+
+<br><br>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 16 - 2/22/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row justify-content-center" style="margin: 20px">
+
+  <p>
+   I learned a lot today from my IPM. I was given feedback on my Euler 12 problem, my OCP presentation, and my coin-changer
+   kata. I had a lot of feedback on things I could have done better that I'd like to take to heart for future iterations.</p>
+  <p>
+   First and foremost, I learned to not assume I have things completed without double-checking,
+   it was a mistake I made today that I'd like to not repeat. I "finished" my Euler 12 problem early on in the week
+   and assumed it was done well enough and didn't think twice about it, choosing to focus on other things for the week.
+   When the day of IPM arrived, it wasn't solved well enough to be acceptable, I should have asked Gina about my solution
+   instead of just assuming it would be acceptable. Ultimately, it was a good lesson on communication.</p>
+  <p>
+   My other two demonstrations went pretty well and were accepted. At the end of the meeting, Micah
+   gave me some good pointers in the form of metaphors on how I should conduct future IPMs. They bogged down to
+   <b>1.</b> treat my demonstration as a show/presentation that I hold the flow over while my mentors can sit back and watch.
+   <b>2.</b> demonstrate each story with a story card sandwich. This means show the story card to introduce my demo, show my demo,
+   then come back to my story card to wrap up that story. <b>3.</b> communicate ahead of time if I'm not going to finish my work on time.</p>
+  <p>
+   After my IPM I jumped into the next iteration. I first finished off Euler 12 to give an acceptable solution that is fast enough.
+   That didn't take me too long. I was happy that my run time went from hours to seconds. I ended the day by getting started on
+   my Tic Tac Toe game in clojure. I wanted to implement a GUI this time around, so I spent the rest of my day dabbling with
+   <a href="https://cljdoc.org/d/seesaw/seesaw/1.5.0/api/seesaw.core">seesaw</a> to use in my project when I come back to it tomorrow.</p>
+ </div>
+
+</div>
+
+<br><br>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 15 - 2/21/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row justify-content-center" style="margin: 20px">
+
+  <p>
+   Today was a last day of polishing for me. I started my morning with stand up and then jumped into my last few
+   Uncle Bob videos for the week. These finished my module on the SOLID principles, which I found to be a very insightful
+   practice. I like how it is emphasized that these principles are not followed dogmatically, but rather
+   a set of guiding principles that make your code much more readable and bug free. I still find the Liskov Substitution
+   Principle to be confusing, therefore I intend to go over it in more depth on my next iteration.</p>
+  <p>
+   To polish up the last few things for tomorrow's IPM, I focused on practice. I went over my OCP presentation quite a few
+   times to get the dialogue fully down, and I practiced my coin changer kata a handful of times again to make sure I'm
+   prepared tomorrow.</p>
+
+ </div>
+
+</div>
+
+<br><br>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 14 - 2/20/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row justify-content-center" style="margin: 20px">
+
+  <p>
+   I started this morning by going through another Uncle Bob video. Today's episode was the <b>Interface Segregation
+   Principle</b> which I found to be quite informative. The biggest take-away was the idea of separating fat classes into
+   a more abstract set of interfaces to make the code have to run and compile much less each time, savings hours of
+   compiling time. I quite liked the idea of this practice and hope to get good at it soon.</p>
+  <p>
+   The next portion of my day was spent getting my Open-Closed Principle presentation ready to go. I am happy with
+   the slides and examples I've provided, and my dialogue is solid too. After a few practices I've managed to get
+   pretty close to five minutes on my presentation. Tomorrow I'm going to go over it a few more times and polish some
+   things up, so it's ready for my IPM on Thursday.</p>
+  <p>
+   I finished up my day with my two kata's. The prime factors kata I finalized the video and published it to YouTube,
+   I am quite happy with how it turned out. My coin changer kata I practiced a handful more times this afternoon to
+   end my day. I am quite confident with how well I can demonstrate it, and plan to get better before Thursday.</p>
+
+  <div style="margin-bottom: 10px">
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/Zy6fChIvDSY?si=ttwuh8_7PiBwH3AB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+
+ </div>
+
+</div>
+
+<br><br>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 13 - 2/19/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row justify-content-center" style="margin: 20px">
+
+  <p>
+   Today was a productive day! I made notable progress on each story in this week's iteration.
+   Tomorrow I will be able to pick up where I left off on each story and hopefully wrap some of them up by
+   the end of day.</p>
+  <p>
+   To start, I watched some Uncle Bob videos on the Liskov Substitution principle, I want to go over it a bit more since
+   some parts of it still haven't fully clicked. I plan to do so by rewatching sections of the videos I watched and doing
+   some outside research on the subject.</p>
+  <p>
+   Onto my next task, I practiced my prime factors kata before recording myself doing it. My recording was just around 6
+   minutes long which is a great length for the video. I did a bit of editing today, and tomorrow I will finish up the video
+   and post it on YouTube to finish that story.</p>
+  <p>
+   The largest portion of my afternoon was spent preparing for the Open Closed Principle presentation I need to have
+   done by Thursday. I spent a good while fully understanding the concept before making my slides. I wanted to
+   demonstrate a good example in Clojure on how one can violate the OCP, and then how that code could be refactored to not
+   violate the principle, however this took some additional research on Clojure syntax to get this working as I'd hoped.
+   I have to finish up my slides tomorrow, and then I can move on to practicing my dialogue for the presentation.</p>
+  <p>
+   I wrapped up the day by practicing the coin-changer kata a few times, and I've cleaned my solution even further by using
+   thread-first macros to make the process much cleaner. I will have a strong demonstration of the kata by Thursday!</p>
+
+ </div>
+
+</div>
+
+<br><br>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 12 - 2/16/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row justify-content-center" style="margin: 20px">
+
+  <p>
+   I kicked off today by doing some last minute prep work for my Prime Factors Kata demonstration at our weekly Lunch and Learn.
+   I managed to practice it three times and I added in some extra test cases that Micah And Gina tested it on yesterday
+   that led to a stack overflow issue. Fortunately my presentation went really well, I addressed the stack overflow issue
+   and fixed it. People were impressed with the presentation I gave, and I was given good feedback. All in all, I felt
+   good about the demonstration and I can take that confidence into next week!</p>
+  <p>
+   The rest of the meeting was again seeing some progress reports from my peers. Then we finished it off with a game
+   of my choosing because I was the facilitator this week. I went with <a href="https://garticphone.com/">Gartic Phone</a>
+   which seemed to be a hit for everyone.</p>
+  <p>
+   On the second half of my day I watched a few Uncle Bob videos and then dived into my newest kata <b>Coin Changer.</b>
+   For my first time practicing it, my main focus was just to solve it, and then optimize my solution as much as possible.
+   I found an incredibly simple and elegant solution, therefore, I'm going to spend the next week getting fast at writing
+   out the solutions and tests for it. My tests themselves could use work on wording and possible cases.
+  </p>
+
+
+  <div class="row" style="margin: 20px">
+   <img src="/assets/photos/coin-changer.png" width="150" class="col">
+  </div>
+
+ </div>
+
+</div>
+
+<br><br>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 11 - 2/15/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row justify-content-center" style="margin: 20px">
+
+  <p>
+   Today was a good day! I had my IPM meeting and this time I was able to be fully prepared for it.
+   I brought in all my work from the iteration and did really well! It seemed as though Gina and Micah were both
+   satisfied with the work I did.</p>
+  <p>
+   First I presented my Euler problems, they noticed the improvement in the layout,
+   tests and quality of the work from last week. I was given suggestions on using threads and tail recursion, both
+   things I ended up doing in Euler 12 later today!</p>
+  <p> Next I did my Kata which I did really well on, the code just flowed out of my fingertips and gave for a great
+   demonstration of mastery at my IPM. The feedback they gave was pretty extensive on this one and I was sure to write
+   everything down. It mostly bogged down to making it cleaner and to not pre-factor my steps.</p>
+  <p> Last was my SRP presentation. The biggest comment was that I overcomplicated the topic too much. I went too
+   into detail on the decoupling strategies and communicated information that was unnecessarily technical. They also
+   recommended I add a personal touch to my presentation to be more entertaining for the viewers. Both are things I'll
+   be sure to take into my next presentation on Open-Closed Principle. We finished off the meeting by
+   planning my next iteration.</p>
+  <p> Given that I still had another half-day, I jumped right into my next iteration. First I watched an Uncle Bob video
+   on Use Cases, which I found to be quite informative. It left me a good idea on how to approach designing software
+   architecturally. I finished my day by doing Euler problem 12 which I managed to add in both thread-first and
+   tail-recursion to optimize and clean my code.</p>
+
+  <div class="row" style="margin: 20px">
+   <img src="/assets/photos/euler-12.png" width="150" class="col">
+  </div>
+
+ </div>
+
+ <br><br>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
