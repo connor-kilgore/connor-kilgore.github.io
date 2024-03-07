@@ -57,6 +57,41 @@
 <div class="container bg-light">
  <br>
  <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 24 - 3/5/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row" style="margin: 20px">
+
+  <p>
+   Today was heavily focused on the 4x4 implementation of my Tic Tac Toe Board. This story was really involved
+   mostly because my existing code wasn't following OCP well enough. I had to refactor old code just to be able
+   to extend new implementation, so I spent a lot of time making it compliant with OCP. This mostly involved
+   changing how my menu screen allows user selection, as well as being open to any size board and how those inputs
+   would be processed. I found this work to be quite rewarding because I can go back on my earlier work and
+   understand myself exactly how I could have done it better. This is practice that after a while of continually
+   hammering down, I can hopefully follow without even thinking about it!</p>
+  <p>
+   After my code was looking open for extension, I needed to implement a 4x4 board, the
+   meat of this story. Getting it to work for users was fine, just a bit of fiddling with the inputs, but the AI
+   implementation was incredibly difficult. Early on I got it working in theory, but the computation time was
+   way too long to be acceptable. When doing an involved tree search through 9 levels of permutations, it takes
+   a few seconds, but at 16 levels for the 4x4 board, it was more likely hours or even days.</p>
+  <p>
+   I started researching solutions for this issue and came across two concepts, limited depth search and
+   alpha-beta-pruning. Both were pretty hard to implement and get my AI to behave as it should. After half
+   a day of attempting, I was not successful in getting this working, but I feel as though I'm close,
+   tomorrow I will finish this off.</p>
+
+ </div>
+
+</div>
+
+<br><br>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
   <h1 class="align-middle text-center col-10"><b>Day 23 - 3/4/2024</b></h1>
  </div>
 
