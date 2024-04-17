@@ -58,322 +58,37 @@
      style="background-color:white; color:black; margin-right: 10px; padding: 2px">21-30</a>
   <a class="nav-item rounded" href="./31-40"
      style="background-color:white; color:black; margin-right: 10px; padding: 2px">31-40</a>
+  <a class="nav-item rounded" href="./41-50"
+     style="background-color:white; color:black; margin-right: 10px; padding: 2px">41-50</a>
  </h3></div>
 
 <div class="container bg-light">
  <br>
  <div class="row justify-content-center">
-  <h1 class="align-middle text-center col-10"><b>Day 50 - 4/10/2024</b></h1>
+  <h1 class="align-middle text-center col-10"><b>Day 51 - 4/11/2024</b></h1>
  </div>
 
  <br><br>
  <div class="row justify-content-center" style="margin: 20px">
 
   <p>
-   Today, I spent finishing up the last features of my project. In particular, I had the guessing game to tackle.
-   After a little while of no luck with my approach from yesterday, I came up with a better solution.</p>
+   I felt good coming out of IPM today. Having such a huge 10-point assignment be accepted all at once is
+   somewhat satisfying. However, they gave me work to do for this week on my HTTP Server. The biggest point
+   out was that I didn't test my server nearly enough. I had anticipated this going into the meeting because
+   of the time constraints that prevented me from fully testing my project. I also had issues coming up with
+   solutions for how to test side effects rather than exact return values. Micah pointed out something that
+   really made sense with how I should go forward. By strictly following TDD, I'm also forcing myself to follow
+   the SOLID principles. It was not something I'd considered in the past, but it makes sense. A lot of my would-be
+   tests were impossible due to not following the basic rules of SOLID like dependency inversion.</p>
   <p>
-   Instead of maintaining a constant connection, I opted to create a POST form that sends all relevant
-   information about the game being played—namely, the guessed number, the answer, and the remaining number
-   of guesses. It required some reworking, but it ended up working like a charm. Admittedly, it's not the
-   most elegant solution, as users can potentially access the answer by using the inspect feature on the browser.
-   However, due to time constraints, it will suffice for my initial implementation. I aim to revisit and refine
-   my last approach later on to integrate it back into my system.</p>
-  <p>
-   The remainder of the day was dedicated to getting the ping feature to work, demonstrating that my server
-   functions effectively with a thread pool. Surprisingly, it didn't take as long as I had anticipated. All
-   I had to do was utilize my <b>handleClient</b> method with a Java thread-pooling tool. Then, I set up a simple
-   ping command that sleeps for 1 second and prints the time in milliseconds. It required some tinkering, but
-   I managed to get it working just fine. I now feel fully prepared for my IPM tomorrow!</p>
-
+   I spent the second half of my day jumping into restructuring my project to have fully involved tests.
+   After a few hours, I realized I had definitely underestimated how long this would take. I've only finished
+   off one file, and that took me hours. Mostly, there was lots of time working out how I would test for side
+   effects. I'm hoping once I get over that learning curve, the rest of the test setup will go faster.</p>
 
  </div>
 
 </div>
-
-<div class="container bg-light">
- <br>
- <div class="row justify-content-center">
-  <h1 class="align-middle text-center col-10"><b>Day 49 - 4/9/2024</b></h1>
- </div>
-
- <br><br>
- <div class="row justify-content-center" style="margin: 20px">
-
-  <p>
-   Continuing from where I left off yesterday, I dedicated today to crossing off more items from my feature list.
-   With only two days remaining until my IPM, I aimed to wrap up comfortably by tomorrow.</p>
-  <p>
-   The initial task I tackled was setting the root directory. Thankfully,
-   I had already implemented argument parsing last Friday, so it was just a matter of passing the
-   root directory through to where it retrieves files. After about an hour of tinkering, I
-   successfully got it to work as intended!</p>
-  <p>
-   The remainder of the day was dedicated to working on the guessing game feature. It turned out to be a more
-   challenging implementation than I had anticipated. While I feel like I'm close to completion, I
-   didn't quite finish it today. One major hurdle I encountered was figuring out how to maintain a
-   continuous connection between the web browser and the server. Without this, there's a risk of data
-   being lost or mixed up between users. Unfortunately, there isn't much documentation available on this
-   aspect, so I'll give it another shot tomorrow. If I can't get it to work, I'll have to brainstorm a
-   workaround solution.
-  </p>
-
-
- </div>
-
-</div>
-
-<div class="container bg-light">
- <br>
- <div class="row justify-content-center">
-  <h1 class="align-middle text-center col-10"><b>Day 48 - 4/8/2024</b></h1>
- </div>
-
- <br><br>
- <div class="row justify-content-center" style="margin: 20px">
-
-  <p>
-   Today, I aimed to enhance a few features of my HTTP server. Initially, I focused on refining my
-   <b>/hello</b> implementation to be more concrete than it was on Friday. After about an hour of work,
-   I achieved a state I was satisfied with, incorporating good testing. Instead of serving a dumped HTML
-   string, it now pulls content from a file in my hello directory. This progress also partially fulfills the
-   file-serving aspect of my project, as it now knows how to read and serve files. However, I still need to
-   extend its capabilities to handle other file types such as images and text files.</p>
-  <p>
-   Over the next few hours, I focused on ensuring the directory listing functioned correctly.
-   I refined my program to recognize when the provided path is a directory, enabling it to list all
-   files within that directory on a generated HTML page. Additionally, I implemented a feature
-   where each listed file serves as a link to itself, allowing users to access those files directly.
-  </p>
-
-  <div class="row" style="margin: 20px">
-   <img src="/assets/photos/directory-list.png" class="col">
-  </div>
-
- </div>
-
-</div>
-
-<div class="container bg-light">
- <br>
- <div class="row justify-content-center">
-  <h1 class="align-middle text-center col-10"><b>Day 47 - 4/5/2024</b></h1>
- </div>
-
- <br><br>
- <div class="row justify-content-center" style="margin: 20px">
-
-  <p>
-   Over the next week, my focus will be entirely on the Java HTTP Server project. Today, I dedicated
-   significant effort to refreshing my knowledge on the subject through research. As anticipated yesterday,
-   I found myself familiar with much of the content. However, I also needed to conduct new research on
-   making HTTP requests, which differs from the TCP requests I'm accustomed to.</p>
-  <p>
-   As a reflection, I'm thoroughly enjoying this journey because the topic of networks combined with
-   computing has always fascinated me. It's enjoyable to practice and experiment with packet parsing
-   and sockets. However, as I approach this week, I want to ensure that I uphold the practices and
-   principles I've learned. This is my chance to dive into a brand-new project and preemptively adhere
-   to SOLID principles this time around.</p>
-  <p>
-   Regarding the work I accomplished today, I concentrated on addressing the list of features I was assigned.
-   I successfully set up an argument parser capable of configuring the port and specifying the root
-   directory of the server. By day's end, I had nearly completed the implementation of the /hello command.
-   On Monday, I plan to return and tackle a few more options.</p>
-
- </div>
-
-</div>
-
-<div class="container bg-light">
- <br>
- <div class="row justify-content-center">
-  <h1 class="align-middle text-center col-10"><b>Day 46 - 4/4/2024</b></h1>
- </div>
-
- <br><br>
- <div class="row justify-content-center" style="margin: 20px">
-
-  <p>
-   Today, I entered my IPM fairly confident about the work I had to deliver. However, I realized that
-   I need to do some rework on my Component Design presentation. I missed some principles that are
-   involved with the presentation, so when I am given the chance again, I'll go back and conduct more
-   in-depth research on the subject for next time!</p>
-  <p>
-   At the end of the meeting, I was assigned a significant task: setting up an HTTP server in Java from
-   scratch. They allotted me the entire week to complete this project. When they say "from scratch,"
-   it entails using server sockets and managing client intake to the fullest extent possible. Given my
-   experience with server sockets, I'm optimistic about breezing through this project. While my experience
-   mainly involves TCP connections, I'm uncertain how much it'll differ with HTTP. However, I am familiar
-   with byte reading and multi-threading to handle separate client connections.</p>
-  <p>
-   I dedicated the afternoon to conducting some refresher research and reacquainting myself with the
-   material. By the end of the day, I successfully set up a basic Java EchoServer that simply prints
-   out any input received from clients.</p>
-
-  <div class="row" style="margin: 20px">
-   <img src="/assets/photos/EchoServer.png" class="col">
-  </div>
-
- </div>
-
-</div>
-
-<div class="container bg-light">
- <br>
- <div class="row justify-content-center">
-  <h1 class="align-middle text-center col-10"><b>Day 45 - 4/3/2024</b></h1>
- </div>
-
- <br><br>
- <div class="row" style="margin: 20px">
-
-  <p>
-   Just like yesterday, I had a lot of work on my database to do today. I have to implement
-   the SQL code that clojure executes to get the proper information to pass back to my code.</p>
-  <p>
-   I spent the majority of my day getting these functions set up, along with their appropriate tests.
-   I really liked how involved my tests ended up being; it was a clear example of improvement in my
-   TDD that I noticed. It took some fiddling with the database, especially because it can't handle
-   multi-value columns. I had to set up some in-between tables to handle the 1-n relationships.</p>
-  <p>
-   After the database query system was set up, I just had to get them paired up with my multi-methods
-   for the save functionality I'm already using with file-saving. The seamless extension of my psqldb
-   module into the rest of my system was something I really appreciated. I haven't properly seen the
-   benefits of OCP until now, so it was a huge 'aha' moment for me!</p>
-  <p>
-   I had to work late today, but thankfully I got my database implementation ready to go for tomorrow
-   and I'm ready for my presentation on Component Design as well!</p>
-
- </div>
-
-</div>
-
-<div class="container bg-light">
- <br>
- <div class="row justify-content-center">
-  <h1 class="align-middle text-center col-10"><b>Day 44 - 4/2/2024</b></h1>
- </div>
-
- <br><br>
- <div class="row" style="margin: 20px">
-
-  <p>
-   Today was all about my database implementation. I quickly realized that I had a lot more work
-   to do on my technical debt. There was still a lot of code that needed proper separation for this
-   new implementation to function smoothly.</p>
-  <p>
-   I spent the first few hours making an argument parser that can take in arguments in any order and
-   properly understand them. This way, there are no issues if the user wants to interchange arguments
-   in no particular order</p>
-  <p>
-   The rest of the day was spent working on my database implementation. I had to do some initial
-   research on PostgreSQL. I'm pretty rusty on SQL, and implementing PostgreSQL in Clojure is new
-   to me, so it took some research. Near the end of the day, I had my code properly connecting to
-   a locally created database. I played around with making and showing tables, but I also had to
-   practice my presentation a few times to end the day.</p>
-
- </div>
-
-</div>
-
-<div class="container bg-light">
- <br>
- <div class="row justify-content-center">
-  <h1 class="align-middle text-center col-10"><b>Day 43 - 4/1/2024</b></h1>
- </div>
-
- <br><br>
- <div class="row" style="margin: 20px">
-
-  <p>
-   Starting this week, I aimed to seek clarification on the issues I encountered last Thursday
-   with multi-methods. I ended up messaging Gina about my questions and received the answers I needed.
-   Today, I plan to focus on finishing up my technical debt.</p>
-  <p>
-   First I started more work on my Component design presentation. I spent the first half of the
-   day researching, and putting together my slides and dialogue for the presentation. I now
-   have a solid understanding of the subject material, I just need to practice the dialogue
-   periodically over the next few days for my IPM on Thursday.</p>
-  <p>
-   I finished up the day by addressing my technical debt. Needless to say, these technical debts
-   are becoming quite costly for 0-point assignments. I find myself a little behind schedule since
-   I still need to fully implement the database over the next two days. However, I see these technical
-   debts as valuable learning experiences that ultimately contribute to a smoother implementation
-   process for new features. In a way, I've been laying the groundwork for the database implementation all along.</p>
-  <p>
-   Also, I forgot to post my kata video on Friday, so here it is!</p>
-
- </div>
-
- <div class="row justify-content-center" style="margin-bottom: 10px">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/4m9gP65fKJU?si=WjRST3mzGpMWJh_s"
-          title="YouTube video player" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
- </div>
-
-</div>
-
-<div class="container bg-light">
- <br>
- <div class="row justify-content-center">
-  <h1 class="align-middle text-center col-10"><b>Day 42 - 3/29/2024</b></h1>
- </div>
-
- <br><br>
- <div class="row" style="margin: 20px">
-
-  <p>
-   Today, I aimed to tackle all the minor tasks so that I wouldn't have much else to focus on.
-   My primary focus was on completing my video for the bowling game kata, followed by watching
-   the remaining videos on component design.</p>
-  <p>
-   I completed the video sooner than anticipated, which allowed me to invest additional time in
-   improving and rehearsing my kata. Following the advice given during my IPM yesterday, I first
-   restructured my tests to adhere to a proper test structure with <b>Build</b>, <b>Operate</b>,
-   and <b>Check</b> attributes. Additionally, I revamped my kata to be more polymorphic and object-oriented.
-   After primarily using Clojure in recent months, I found myself slipping out of Java habits, so this
-   served as a valuable refresher.</p>
-  <p>
-   Afterwards, I delved into the video production process. This segment wasn't too challenging;
-   I simply had to record, add voice-over, and edit, which only took a few hours to complete. By
-   the end, I still had some time left to watch the Component Design Videos.</p>
-  <p>
-   Needless to say, I am struggling a bit to understand the concepts from Component Design.
-   I want to do some more research and understanding on the subject before I complete the tests.</p>
-
-
- </div>
-
-</div>
-
-<div class="container bg-light">
- <br>
- <div class="row justify-content-center">
-  <h1 class="align-middle text-center col-10"><b>Day 41 - 3/28/2024</b></h1>
- </div>
-
- <br><br>
- <div class="row" style="margin: 20px">
-
-  <p>
-   Today, I had IPM, and I was pleasantly surprised by how my work turned out. Despite setbacks with my
-   3x3x3 board, I had anticipated that there might not be a full delivery. However, my hard work paid off,
-   and I entered the meeting with all my features working perfectly! By the end of the meeting, I received
-   good feedback on my projects, and everything was accepted!</p>
-  <p>
-   In particular, Gina gave me lots of advice on how to make my project more polymorphic by completely
-   separating the TUI and GUI. Going into next week, I'll apply the same advice to how I'll implement
-   the database functionality.</p>
-  <p>
-   I spent the rest of the day working on my technical debt. By the end of the day, I
-   had made good progress on separating my user interfaces. However, I ended up getting
-   stuck on how to call multi-methods in different namespaces, which I'll tackle tomorrow.</p>
-
- </div>
-
-</div>
-
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
