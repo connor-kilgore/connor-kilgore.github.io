@@ -65,6 +65,46 @@
 <div class="container bg-light">
  <br>
  <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 58/59 - 4/22-23/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row" style="margin: 20px">
+
+  <p>
+   On Monday, I didn't have much to talk about, so I decided to save it for the end of Tuesday.
+   During these two days, I did a lot of trudging through to get the HTTP server to work as intended,
+   since I needed that properly set up before I could start the tic-tac-toe implementation.</p>
+  <p>
+   For all of Monday, I focused on getting the server to run properly. Unfortunately I ran into
+   a major setback on how I might properly process the data. This is where I had some issues with
+   the Clojure to Java conversion. It's a little confusing using Java code that's mutable with an
+   immutable language, but I eventually got things to make sense.</p>
+  <p>
+   For the second half of the day I
+   wanted to find a solution to my big problem, how do I track and send requests to and from the client.
+   Since my HTTP_Server did this all by itself it was hard to keep track of that information and an issue
+   I deliberated on for a while. I had found a half solution by the end of the day which was to store sockets
+   in an array list upon connecting so that I could access them from my clojure code.</p>
+  <p>
+   On Tuesday, I found a much better solution. Instead of running the server independently,
+   I decided to set up my own server using the tools provided by my HTTP_Server. At this point,
+   I realized how much I had underestimated this project. According to my initial estimations,
+   I should have been done by now, but I don't even see the horizon yet. After a few hours of setup,
+   I was pleased with my solution. Essentially, I run the server using tools from my library to allow
+   me to extend its behavior in the way I'd like. If the user makes a normal request, which in this
+   case means not having a root request of "/ttt", the server reroutes the behavior to the original library.</p>
+  <p>
+   By the end of the day, my server was in a good position in terms of being open for extended behavior.
+   However, I still had to implement the entire tic-tac-toe behavior. If it's anything like what I just
+   did, I have a lot of work ahead of me.</p>
+
+ </div>
+</div>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
   <h1 class="align-middle text-center col-10"><b>Day 57 - 4/19/2024</b></h1>
  </div>
 
