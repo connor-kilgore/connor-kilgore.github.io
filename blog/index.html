@@ -67,6 +67,67 @@
 <div class="container bg-light">
  <br>
  <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 64 - 4/29/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row" style="margin: 20px">
+
+  <p>
+   Going into this week I feel fully reset from last week! I want to get my HTTP Server done the end of
+   tomorrow, so that I still have a day to focus on my TicTacToe clean up.</p>
+  <p>
+   Today ended up being a pretty big trudge mostly because I was working out some refactoring to get my
+   server to work properly in the context of a library. This involved adjusting a few more functions
+   and setting up my ttt-web application to use it properly. Near midday, I got pretty stuck on the
+   reoccurring problem I'm having which is that my point of entry in this application is at the HTTP_Server
+   library, but I need to send that data back to my ttt-web application. I decided to pocket it for now
+   and put some time into catching up on some clean code videos I have to watch. That took up the rest of my
+   day.</p>
+
+ </div>
+</div>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 63 - 4/26/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row" style="margin: 20px">
+
+  <p>
+   Today was all about jumping into making my HTTP server more extensible, and usable from high-level
+   function calls. I am happy with my productivity today because I got a few things here and there done
+   instead of focusing on one thing like I usually tend to do.</p>
+  <p>
+   For the first half of the day I watched another Uncle Bob video, I have quite a few to watch this week
+   so instead of having a day dedicated to cramming all this knowledge with 8 hours of video watching, I'm
+   going to try to watch one video in the morning of each day, and some days at the end of my day as well.</p>
+  <p>
+   After my videos, I went to Lunch and Learn. I could only stay the first 45 minutes because I had an
+   appointment to go to, fortunately the actual IPM portion of it was over before then, so I only missed out
+   on the game section a bit.</p>
+  <p>
+   After getting back from my appointment, I ended up diving into my HTTP server implementation for the rest of
+   the day. Where I went wrong last week was that I had used low-level functions for my server library, when instead
+   I should have focused on high level function calls. The current state of my library is unable to handle that
+   simply because it is not fully OCP compliant.</p>
+  <p>
+   I ended up spending a few hours migrating my ttt-web project from a Leiningen to a debs.edn project.
+   Getting this to work properly and import the jar files was tricky, but I got it working.</p>
+  <p>
+   Afterward, I was able to finish up my day by cleaning up some of the function calls in my HTTP_Server.
+   This included changing some names and designing a few functions that have the intention of being used
+   in the context as an API.</p>
+
+ </div>
+</div>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
   <h1 class="align-middle text-center col-10"><b>Day 62 - 4/26/2024</b></h1>
  </div>
 
