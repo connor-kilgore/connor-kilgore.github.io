@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title> Connor Kilgore - Portfolio </title>
+
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ <link rel="stylesheet" href="/assets/styles.css">
+</head>
+
+<body>
+<!-- Navigation header -->
+<nav data-include="header" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light">
+ <div class="container-fluid">
+  <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+   <ul class="navbar-nav flex-grow-1">
+    <a class="nav-item nav-link rounded" href="/"
+       style="background-color:white; color:black; margin-right: 10px;">Home</a>
+    <a class="nav-item nav-link rounded" href="/work"
+       style="background-color:white; color:black; margin-right: 10px;">Work</a>
+    <a class="nav-item nav-link rounded" href="/blog"
+       style="background-color:white; color:black; margin-right: 10px;">Blog</a>
+    <a class="nav-item nav-link rounded" href="/resume"
+       style="background-color:white; color:black; margin-right: 10px;">Resume</a>
+    <a class="nav-item nav-link rounded" href="mailto:connor.kilgore@gmail.com"
+       style="background-color:white; color:black; margin-right: 10px;">Contact</a>
+   </ul>
+  </div>
+ </div>
+</nav>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 80 - 5/21/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row justify-content-center" style="margin: 20px">
+
+  <p>
+   Today I put all my focus into my ClojureScript TTT implementation. I had a decent start in the morning because I
+   resolved a few lingering issues with my setup, however they took up more time than I'd hoped throughout the day
+   seeing as I only have until tomorrow to get this done.</p>
+  <p>
+   Those issues included trying to get Reagent imported into my system properly, and having a proper run file instead
+   of just a dev file for testing. I took a wrong turn with Reagent and ended up wasting some extra time but by
+   midday I had everything working.</p>
+  <p>
+   In the afternoon I ended up finding out how involved Reagent can be for this project. I hacked at getting the new
+   UI working for the rest of the day, but I just didn't finish on time, I had to let my Mentors know of my situation.
+   I think where I went wrong was I thought I could use the UI synchronously with my program like the TUI performs, but
+   JavaScript, and therefore ClojureScript is inherently asynchronous. If I had another day or two to rethink
+   and refactor my strategy I could get this program finally complete. For now I'll show them what I have at IPM
+   tomorrow.
+  </p>
+
+ </div>
+</div>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 79 - 5/20/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row justify-content-center" style="margin: 20px">
+
+  <p>
+   I've a fresh week ahead of me. I don't have as many days this week to hit my quota since my IPM was permanently
+   moved to Wednesdays on account of the two new apprentices. I can't really complain since I only have 4 points this
+   week.</p>
+  <p>
+   Early this morning I finally fully fixed my issues with the ClojureScript project set up! It's been a long and
+   gruelling task between Gina and me. Our combined efforts paid off! I was proud to share that information with
+   her and I think it will reflect well on how I present this project to her and Micah on Wednesday.</p>
+  <p>
+   Afterward I got into the supposed meat of this project which was getting the stateless TicTacToe game
+   running on my website. Today to accomplish this I focused on integrating my project into .cljc files.
+   I have a good grasp on what does and doesn't need to be a .cljc file. It really comes down to if the file is
+   usable for both frontend and backend, then it should be a .cljc file. I accomplished this by adding in my
+   TicTacToe files one by one getting each one to work starting from the most concrete classes up to the more
+   abstract ones. By the end of it all I had my project fully working as both a ClojureScript and Clojure
+   version!</p>
+  <p>
+   Tomorrow all I have to do is implement my new ui for the ClojureScript implementation, then I'm ready for my IPM.
+   I'm hoping I can get this done early so that I have some time to really make sure everything looks good for Wednesday.
+  </p>
+
+ </div>
+</div>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 78 - 5/17/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row justify-content-center" style="margin: 20px">
+
+  <p>
+   Starting my next iteration fresh I started this morning with some last minute practice on my presentation
+   for lunch and learn today. I revised a few things just before presenting, but that fortunately wasn't
+   a problem.</p>
+  <p>
+   Today during lunch and learn I got to meet the now newest apprentice Michael, also known as Scoops.
+   He seems like a nice guy and I look forward to getting to know him better as he continues his
+   journey at Clean Coders.</p>
+  <p>
+   For our game this week we did a spy game which I found quite fun! I think I've played it in the past,
+   but it's been a long time, it was a nice throw-back for me.</p>
+  <p>
+   After Lunch and Learn and a short lunch break I focused on my continued issue the ClojureScript project,
+   I'm happy to say I made good progress and actually got stuff compiling today! I'm hoping on Monday I can
+   wrap up these issues and focus on the implementation finally.</p>
+
+ </div>
+</div>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 77 - 5/16/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row justify-content-center" style="margin: 20px">
+
+  <p>
+   I went into IPM today knowing that I didn't have something done, but as I mentioned previously,
+   I've been fairly open about this being difficult so fortunately at least me being behind wasn't
+   a surprise.</p>
+  <p>
+   Micah was held back in another meeting, so it was just me and Gina, we spent a good while pairing trying
+   to resolve some of the major issues I've been dealing with so that I can get this story done and working
+   properly.</p>
+  <p>
+   After we finished pairing I took a lunch break then jumped into a call with the new apprentice Alex
+   to say hi. He works in a sun-room in his home which compared to my often dimly lit studio apartment,
+   makes me jealous.</p>
+  <p>
+   After talking to Alex I did some work on my ClojureScript story to try and start fresh, Gina recommended
+   I just start with a Hello World project and build my way up so that I'm not encountering major amounts
+   of errors at once.</p>
+  <p>
+   I finished my day by pairing with Merl, so we could give each other pointers on our presentations that we
+   are presenting tomorrow. We cover the same topics, but we took different approaches on what information
+   we wanted to convey, I think it will really help make our presentations not monotonous at Lunch and
+   Learn tomorrow.
+  </p>
+ </div>
+</div>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 76 - 5/15/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row justify-content-center" style="margin: 20px">
+
+  <p>
+   Today was my collaborative effort to try and get going on this ClojureScript story. Despite everything
+   I wasn't very successful, but I'm still glad I gave it my best shot and was open and honest with my
+   mentor about my whole process.</p>
+  <p>
+   The day before I'd been running in circles trying to get my code to compile properly since there was
+   so much involved with the project.clj file as well as other files that even make the whole system even
+   run properly. In my spike story I'd gotten one of my TicTacToe files to run properly in ClojureScript. This
+   process took me about half a day to get working, so I deemed that acceptable for my spike story. I figured the
+   rest would be straight-forward, but I was wrong in assuming that. Additionally, I had not anticipated how
+   difficult getting Speclj to work with ClojureScript was going to be, it took a lot of extra effort beyond just
+   putting the dependency in my project.clj file, something I also incorrectly assumed.</p>
+  <p>
+   After various tuples with Gina she showed me that I needed to pivot directions and use .cljc files which
+   is something I hadn't even considered yet. I needed to get my web server to interact with clojure files through
+   .cljc files as an interface. By doing this I'm allowed to keep in the code of mine that otherwise is
+   incompatible with a web-server, such as the saving and printing. Nonetheless, she showed that I would
+   need to refactor a lot of code from my original TicTacToe. I had anticipated that refactoring, and
+   getting the server to run without issues, and actually making my implementation would all take well
+   over the half-day I had left to get this assignment done, therefore I chose to just be open about
+   my progress and put my focus more towards my presentations for my IPM tomorrow.
+  </p>
+ </div>
+</div>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 75 - 5/14/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row justify-content-center" style="margin: 20px">
+
+  <p>
+   Going into today I had one thing to focus on and that was my stateless ttt webpage. I found that progress
+   could have gone faster, but I think I hit an okay stopping point for the day.</p>
+  <p>
+   In particular, I had to do a lot of making shifting my code over to compilable javascript.
+   The process of this was a little difficult due to the fact that a lot of tools for getting that to
+   work along with speclj were pretty outdated and hard to get information on. However, by about midday
+   I had things working as I'd hoped which is good!</p>
+  <p>
+   There was a serious constraint however, I could not get all the tools for deploying and using TDD
+   working on an updated version of closure, it's forcing me to use a pretty outdated version. Tomorrow
+   I'm going to ask for help on resolving this issue since I couldn't seem to find a solid solution.</p>
+  <p>
+   Within my limitation I decided to focus more on the implementation which involved created the new
+   ui output for my TTT game. I had to do a bit of research on how to use JavaScript again. I'm happy
+   with what I figured out I had enough time in the rest of my day to implement a few methods!
+  </p>
+
+  <div class="row" style="margin: 20px">
+   <img src="/assets/photos/abstract_factory.png" class="col">
+  </div>
+ </div>
+</div>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 74 - 5/13/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row justify-content-center" style="margin: 20px">
+
+  <p>
+   To start off today, I had a plan of finishing my abstract factory presentation. If I can do that, I'm
+   in a good spot to get my ClojureScript project done tomorrow, and finish my last presentation on Wednesday
+   in time for IPM.</p>
+  <p>
+   I am noticing I'm a bit behind due to the push on my last IPM, I still have 10 points of work this week
+   but effectively 8 points of time because I lost a whole day. I will remember if this happens in the future
+   so that I can bring it to my mentor's attention ahead of time.</p>
+  <p>
+   Throughout the day, I put my slides together with the research I compiled. I used lots of graphics to
+   get across my point and I like the flow of my dialogue. I ended the day by running through it quite a few times
+   till I could get through the presentation without following my script. I'll continue to practice
+   as the week progresses. Here's an example of a graphic I used!
+  </p>
+
+  <div class="row" style="margin: 20px">
+   <img src="/assets/photos/abstract_factory.png" class="col">
+  </div>
+ </div>
+</div>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 73 - 5/10/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row" style="margin: 20px">
+
+  <p>
+   I kicked off today with my IPM early in the morning. There wasn't any coding projects so the acceptance
+   criteria was much easier to hit than usual. I got everything accepted with no problems, which felt great.
+   Micah also suggested I share the Clojure Con 2024 research with Tadd.</p>
+  <p>
+   After Lunch and Learn I decided to jump into one of my stories which was a presentation on Abstract
+   Factories. I did some preliminary research and re-watched the Clean Code video to get a solid understanding
+   of the subject. I wrote down some solid notes for Monday and that's how I ended my day. I'm still game
+   planning how I want to approach this topic since I don't want to rehash too much information from my last
+   presentation.
+  </p>
+ </div>
+</div>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 72 - 5/9/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row" style="margin: 20px">
+
+  <p>
+   This morning I was notified that my IPM would be pushed to tomorrow. I didn't have much to do, and both
+   Gina and Micah were pretty busy today, therefore I decided to just run through all my projects today
+   and make the quality of my work even better. I re-watched some design pattern videos that I still
+   could use a little more understanding on, and otherwise I ran fixed up my presentation with Merl bit by
+   bit.</p>
+  <p>
+   For the second half of the day, Merl and I practiced our dialogue together for when we present at tomorrow's
+   Lunch and Learn. We decided to do a little playful conversation for our presentation which I think really
+   helps with the entertainment factor. We are both super confident with the quality of our presentation
+   for tomorrow.</p>
+ </div>
+</div>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 71 - 5/8/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row" style="margin: 20px">
+
+  <p>
+   I have to finish off my iteration today. To do so I completed three things. The first was
+   my spike research on ClojureScript. I looked at some videos on the topic and found the transfer over
+   to ClojureScript from my original Clojure TTT code was not super complicated. I did however have to
+   factor in the extension of behavior so that my code would display as a web-ui, that along with considering
+   any complication made me put my Clojure Script story at 4 points for next week.</p>
+  <p>
+   For the second half of my day, I started by finishing off my Clojure Con research. I had everyone's
+   responses for my Google form and was able to do some rough calculations on flight costs and
+   chart everyone's availability for the event.</p>
+  <p>
+   Finishing off my day, I ran through my presentation just a few more times to get ready for my IPM
+   Tomorrow!</p>
+
+ </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
