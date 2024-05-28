@@ -133,10 +133,10 @@
         start-index (* row# side-len)]
     (for [i (range start-index (+ start-index side-len))]
       ^{:key i} [:button {:on-click #(play-move game i symbol)
-                          :style    {:width          "150px"
-                                     :height         "150px"
+                          :style    {:width          "50px"
+                                     :height         "50px"
                                      :vertical-align "middle"
-                                     :font-size      "80px"}}
+                                     :font-size      "20px"}}
                  (get symbols/gui-symbols (nth (:board game) i))])))
 
 (defmulti display-board :three-d?)
@@ -150,7 +150,7 @@
   (let [side-len (board/get-side-len game)]
     (for [i (range (* side-len side-len))]
       (let [board-index (quot i side-len)]
-        ^{:key i} [:div {:style {:margin-left (str (* board-index 70.26) "px")}}
+        ^{:key i} [:div {:style {:margin-left (str (* board-index 150) "px")}}
                    (display-row game i symbol)]))))
 
 (defmethod ui/round-output :web-ui [game]

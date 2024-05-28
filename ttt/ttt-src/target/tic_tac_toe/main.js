@@ -5,14 +5,14 @@ goog.require('tic_tac_toe.ui_interface');
 goog.require('tic_tac_toe.web_ui');
 tic_tac_toe.main.main = (function tic_tac_toe$main$main(var_args){
 var args__5775__auto__ = [];
-var len__5769__auto___67600 = arguments.length;
-var i__5770__auto___67601 = (0);
+var len__5769__auto___8433 = arguments.length;
+var i__5770__auto___8434 = (0);
 while(true){
-if((i__5770__auto___67601 < len__5769__auto___67600)){
-args__5775__auto__.push((arguments[i__5770__auto___67601]));
+if((i__5770__auto___8434 < len__5769__auto___8433)){
+args__5775__auto__.push((arguments[i__5770__auto___8434]));
 
-var G__67602 = (i__5770__auto___67601 + (1));
-i__5770__auto___67601 = G__67602;
+var G__8435 = (i__5770__auto___8434 + (1));
+i__5770__auto___8434 = G__8435;
 continue;
 } else {
 }
@@ -30,9 +30,9 @@ return tic_tac_toe.ui_interface.initialize_ui.call(null,new cljs.core.Persistent
 (tic_tac_toe.main.main.cljs$lang$maxFixedArity = (0));
 
 /** @this {Function} */
-(tic_tac_toe.main.main.cljs$lang$applyTo = (function (seq67599){
+(tic_tac_toe.main.main.cljs$lang$applyTo = (function (seq8432){
 var self__5755__auto__ = this;
-return self__5755__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq67599));
+return self__5755__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq8432));
 }));
 
 
