@@ -82,9 +82,18 @@
    Starting this week refreshed from my three-day weekend I spent the day fixing up the last few remaining features
    of my TTT game. I'm pleased to announce I've finally finished this project after struggling on it for
    quite a long time. I put in some good unit tests, the design is intuitive and the game works just as expected.
-   I'm definitely ready to show what I've got at my IPM tomorrow! You can check out my game
-   <a class="nav-item rounded" href="/ttt">here!</a></p>
+   I'm definitely ready to show what I've got at my IPM tomorrow!</p>
 
+  <script src="/ttt/ttt-src/target/goog/base.js" type="text/javascript"></script>
+  <script src="/ttt/ttt-src/target/ttt_dev.js" type="text/javascript"></script>
+  <script type="text/javascript">
+   goog.require("tic_tac_toe.main")
+  </script>
+
+  <div id="root"></div>
+  <script type="text/javascript" defer>
+   tic_tac_toe.main.main();
+  </script>
 
  </div>
 </div>
