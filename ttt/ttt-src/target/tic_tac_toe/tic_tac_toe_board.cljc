@@ -1,5 +1,7 @@
 (ns tic-tac-toe.tic-tac-toe-board)
 
+; TODO fix true/false multimethods to if statements
+
 (defmulti get-side-len :three-d?)
 (defmethod get-side-len true [game]
   (int (Math/pow (count (:board game)) (/ 1 3))))

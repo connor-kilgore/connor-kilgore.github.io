@@ -8,10 +8,10 @@
                [tic-tac-toe.gui]
                [tic-tac-toe.edndb]
                [tic-tac-toe.psqldb]
-               [tic-tac-toe.archive]])
-            ))
+               [tic-tac-toe.archive]])))
 
 (defn get-end-condition-string [winner players]
+  (println winner players)
   (cond (nil? winner) "\nTie!"
         (= (second (first players)) winner) (str "\n" (first (first players)) " wins!")
         :else (str "\n" (first (second players)) " wins!")))

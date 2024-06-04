@@ -6,6 +6,8 @@ goog.require('tic_tac_toe.turn_system');
 goog.require('tic_tac_toe.win_checker');
 goog.require('tic_tac_toe.ui_interface');
 tic_tac_toe.game_runner.get_end_condition_string = (function tic_tac_toe$game_runner$get_end_condition_string(winner,players){
+cljs.core.println.call(null,winner,players);
+
 if((winner == null)){
 return "\nTie!";
 } else {
@@ -36,8 +38,8 @@ tic_tac_toe.game_runner.game_loop = (function tic_tac_toe$game_runner$game_loop(
 while(true){
 var game_result = tic_tac_toe.game_runner.game_round.call(null,game);
 if(cljs.core.map_QMARK_.call(null,game_result)){
-var G__49010 = game_result;
-game = G__49010;
+var G__6394 = game_result;
+game = G__6394;
 continue;
 } else {
 return game_result;
@@ -51,8 +53,8 @@ var winner = tic_tac_toe.game_runner.game_loop.call(null,game);
 var end_cond = tic_tac_toe.game_runner.get_end_condition_string.call(null,winner,new cljs.core.Keyword(null,"players","players",-1361554569).cljs$core$IFn$_invoke$arity$1(game));
 var retry_QMARK_ = tic_tac_toe.ui_interface.end_game.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"end-cond","end-cond",-1031076501),end_cond,new cljs.core.Keyword(null,"ui","ui",-469653645),new cljs.core.Keyword(null,"ui","ui",-469653645).cljs$core$IFn$_invoke$arity$1(game)], null));
 if(cljs.core.truth_(retry_QMARK_)){
-var G__49011 = tic_tac_toe.game_runner.reset_game.call(null,game);
-game = G__49011;
+var G__6395 = tic_tac_toe.game_runner.reset_game.call(null,game);
+game = G__6395;
 continue;
 } else {
 return null;
@@ -85,8 +87,8 @@ return tic_tac_toe.ui_interface.close_program.call(null,game);
 } else {
 tic_tac_toe.game_runner.run_game_loop.call(null,initialized_game);
 
-var G__49012 = game;
-game = G__49012;
+var G__6396 = game;
+game = G__6396;
 continue;
 }
 break;
@@ -95,27 +97,27 @@ break;
 tic_tac_toe.game_runner.ui_types = new cljs.core.PersistentArrayMap(null, 3, ["--gui",new cljs.core.Keyword(null,"gui","gui",604532813),"--archive",new cljs.core.Keyword(null,"archive","archive",1466927419),new cljs.core.Keyword(null,"default","default",-1987822328),new cljs.core.Keyword(null,"tui","tui",-1217057309)], null);
 tic_tac_toe.game_runner.save_locations = new cljs.core.PersistentArrayMap(null, 2, ["--psqldb",new cljs.core.Keyword(null,"psqldb","psqldb",-581718637),new cljs.core.Keyword(null,"default","default",-1987822328),new cljs.core.Keyword(null,"edndb","edndb",1239103406)], null);
 tic_tac_toe.game_runner.get_valid_arg = (function tic_tac_toe$game_runner$get_valid_arg(args,arg_map){
-var valid_arg = cljs.core.first.call(null,cljs.core.filter.call(null,(function (p1__49013_SHARP_){
-return (!((p1__49013_SHARP_ == null)));
-}),(function (){var iter__5523__auto__ = (function tic_tac_toe$game_runner$get_valid_arg_$_iter__49014(s__49015){
+var valid_arg = cljs.core.first.call(null,cljs.core.filter.call(null,(function (p1__6397_SHARP_){
+return (!((p1__6397_SHARP_ == null)));
+}),(function (){var iter__5523__auto__ = (function tic_tac_toe$game_runner$get_valid_arg_$_iter__6398(s__6399){
 return (new cljs.core.LazySeq(null,(function (){
-var s__49015__$1 = s__49015;
+var s__6399__$1 = s__6399;
 while(true){
-var temp__5753__auto__ = cljs.core.seq.call(null,s__49015__$1);
+var temp__5753__auto__ = cljs.core.seq.call(null,s__6399__$1);
 if(temp__5753__auto__){
-var s__49015__$2 = temp__5753__auto__;
-if(cljs.core.chunked_seq_QMARK_.call(null,s__49015__$2)){
-var c__5521__auto__ = cljs.core.chunk_first.call(null,s__49015__$2);
+var s__6399__$2 = temp__5753__auto__;
+if(cljs.core.chunked_seq_QMARK_.call(null,s__6399__$2)){
+var c__5521__auto__ = cljs.core.chunk_first.call(null,s__6399__$2);
 var size__5522__auto__ = cljs.core.count.call(null,c__5521__auto__);
-var b__49017 = cljs.core.chunk_buffer.call(null,size__5522__auto__);
-if((function (){var i__49016 = (0);
+var b__6401 = cljs.core.chunk_buffer.call(null,size__5522__auto__);
+if((function (){var i__6400 = (0);
 while(true){
-if((i__49016 < size__5522__auto__)){
-var arg = cljs.core._nth.call(null,c__5521__auto__,i__49016);
-cljs.core.chunk_append.call(null,b__49017,cljs.core.get.call(null,arg_map,arg));
+if((i__6400 < size__5522__auto__)){
+var arg = cljs.core._nth.call(null,c__5521__auto__,i__6400);
+cljs.core.chunk_append.call(null,b__6401,cljs.core.get.call(null,arg_map,arg));
 
-var G__49018 = (i__49016 + (1));
-i__49016 = G__49018;
+var G__6402 = (i__6400 + (1));
+i__6400 = G__6402;
 continue;
 } else {
 return true;
@@ -123,13 +125,13 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__49017),tic_tac_toe$game_runner$get_valid_arg_$_iter__49014.call(null,cljs.core.chunk_rest.call(null,s__49015__$2)));
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__6401),tic_tac_toe$game_runner$get_valid_arg_$_iter__6398.call(null,cljs.core.chunk_rest.call(null,s__6399__$2)));
 } else {
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__49017),null);
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__6401),null);
 }
 } else {
-var arg = cljs.core.first.call(null,s__49015__$2);
-return cljs.core.cons.call(null,cljs.core.get.call(null,arg_map,arg),tic_tac_toe$game_runner$get_valid_arg_$_iter__49014.call(null,cljs.core.rest.call(null,s__49015__$2)));
+var arg = cljs.core.first.call(null,s__6399__$2);
+return cljs.core.cons.call(null,cljs.core.get.call(null,arg_map,arg),tic_tac_toe$game_runner$get_valid_arg_$_iter__6398.call(null,cljs.core.rest.call(null,s__6399__$2)));
 }
 } else {
 return null;
@@ -150,8 +152,8 @@ tic_tac_toe.game_runner.is_flag_QMARK_ = (function tic_tac_toe$game_runner$is_fl
 return cljs.core._EQ_.call(null,cljs.core.first.call(null,arg),cljs.core.second.call(null,arg),cljs.core.first.call(null,"-"));
 });
 tic_tac_toe.game_runner.get_valid_parameters = (function tic_tac_toe$game_runner$get_valid_parameters(args){
-return cljs.core.filter.call(null,(function (p1__49019_SHARP_){
-return (!(tic_tac_toe.game_runner.is_flag_QMARK_.call(null,p1__49019_SHARP_)));
+return cljs.core.filter.call(null,(function (p1__6403_SHARP_){
+return (!(tic_tac_toe.game_runner.is_flag_QMARK_.call(null,p1__6403_SHARP_)));
 }),args);
 });
 tic_tac_toe.game_runner.parse_arguments = (function tic_tac_toe$game_runner$parse_arguments(game,args){
