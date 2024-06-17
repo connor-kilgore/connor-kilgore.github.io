@@ -72,7 +72,20 @@
      style="background-color:white; color:black; margin-right: 10px; padding: 2px">81-90</a>
  </h3></div>
 
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 97 - 6/14/2024</b></h1>
+ </div>
 
+ <br><br>
+ <div class="row justify-content-center" style="margin: 20px">
+  <p>
+
+  </p>
+
+ </div>
+</div>
 
 <div class="container bg-light">
  <br>
@@ -83,9 +96,9 @@
  <br><br>
  <div class="row justify-content-center" style="margin: 20px">
   <p>
-   Today was all about focusing on the speclj bug that I dealt with yesterday. I've zoned it down to the library which
-   I pulled from GitHub and started looking through. Evidently I found the bug location after not a whole lot of time
-   and managed to come up with a decent fix that made the bug work okay.</p>
+   Today I talked to Micah about helping me update the Fresh library so I could get the Speclj bug, but I ended up
+   finding out that I was not taking the right approach to follow the acceptance criteria. This was very unfortunate
+   since that put me back to square one with only a day left to complete this story.</p>
   <p>
    At midday, I participated in a discovery meeting with some craftsmen. Normally these meetings are not for apprentices
    but, I was the one who introduced the potential client, Susan. I did volunteer work for her before I started this
@@ -94,10 +107,9 @@
    ideas for them. After the meeting I paired with all the craftsmen, and we estimated everything involved in Susan's
    needs to get a rough idea of what kind of pricing she is looking at.</p>
   <p>
-   I wanted to confirm that my changes were working as intended, so I spent some time creating a local jar from Fresh
-   that I put into my local version of speclj which I packaged into another local jar to use on an example project to
-   confirm my suspicions. After some fiddling everything worked great! Tomorrow I'll get this library updated and
-   update Speclj, so I can mark this story as complete!
+   Back to my Speclj problem, I was supposed to integrate a whole new library as Fresh is deprecated. I spent the rest
+   of the day on this but didn't even come close to a solution. I tried pairing with Alex but there just wasn't enough
+   time, so I ended up giving the heads-up to my stakeholders before IPM tomorrow.
   </p>
 
  </div>
@@ -113,13 +125,19 @@
  <div class="row justify-content-center" style="margin: 20px">
   <p>
    Starting today, I picked up a new story around a speclj bug where it doesn't see file changes for src files
-   in a directory that contains a space character. I spent all of today trying to diagnose this bug and found the issue
-   lies within the Fresh library I ran out of time, but I know where to start for the next day.</p>
+   in a directory that contains a space character.</p>
   <p>
-   I also found out what the bug is, just not where it lies. I found that the url for files gets encoded when passed
+   I found out what the bug is, the url for files gets encoded when passed
    through the java File object. The problem is the library Fresh is not decoding that url before looking for the file
    path in the src directory. This is leading to it not finding the file at all, therefore it does not
    update anything on the speclj vigilant runner output.</p>
+  <p>
+   After I zoned it down to the library, I pulled from GitHub and started looking through. Evidently
+   I found the bug location after not a whole lot of time and managed to come up with a decent fix that
+   made the bug work okay. I wanted to confirm that my changes were working as intended, so I spent some time creating a local jar from Fresh
+   that I put into my local version of speclj which I packaged into another local jar to use on an example project to
+   confirm my suspicions. After some fiddling everything worked great! Tomorrow I'll get this library updated and
+   update Speclj, so I can mark this story as complete!</p>
 
  </div>
 </div>
