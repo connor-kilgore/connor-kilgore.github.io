@@ -75,6 +75,48 @@
 <div class="container bg-light">
  <br>
  <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 96 - 6/13/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row justify-content-center" style="margin: 20px">
+  <p>
+   Starting today, I picked up a new story around a speclj bug where it doesn't see file changes for src files
+   in a directory that contains a space character. I spent all of today trying to diagnose this bug and found the issue
+   lies within the Fresh library I ran out of time, but I know where to start for the next day.</p>
+  <p>
+   I also found out what the bug is, just not where it lies. I found that the url for files gets encoded when passed
+   through the java File object. The problem is the library Fresh is not decoding that url before looking for the file
+   path in the src directory. This is leading to it not finding the file at all, therefore it does not
+   update anything on the speclj vigilant runner output.</p>
+
+ </div>
+</div>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 95 - 6/12/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row justify-content-center" style="margin: 20px">
+  <p>
+   Starting today, I picked up a new story around a speclj bug where it doesn't see file changes for src files
+   in a directory that contains a space character. I spent all of today trying to diagnose this bug and found the issue
+   lies within the Fresh library I ran out of time, but I know where to start for the next day.</p>
+  <p>
+   I also found out what the bug is, just not where it lies. I found that the url for files gets encoded when passed
+   through the java File object. The problem is the library Fresh is not decoding that url before looking for the file
+   path in the src directory. This is leading to it not finding the file at all, therefore it does not
+   update anything on the speclj vigilant runner output.</p>
+
+ </div>
+</div>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
   <h1 class="align-middle text-center col-10"><b>Day 94 - 6/11/2024</b></h1>
  </div>
 
