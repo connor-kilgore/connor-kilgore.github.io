@@ -79,6 +79,33 @@
 <div class="container bg-light">
  <br>
  <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 114 - 7/14/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row justify-content-center" style="margin: 20px">
+  <p>
+   This morning I was able to finish up the last of this route checking story. I ran into a small setback
+   which was refactoring how this function passes in parameters, since it relies on a specific context
+   of handlers to work properly. My fix was to just have the handlers be passed in when the function
+   is called. I don't think this is a perfect solution, but certainly good enough for now. Once I had
+   finished I just had to create the pull request and wait on someone to accept it, so I could update
+   the other projects, an otherwise trivial task.</p>
+  <p>
+   In the afternoon I started a story that I knew was going to be tough, which was the retroactive
+   adding of todos on Poker. The initial issue was that Epic passes its stories to Poker, but not its todos
+   on an initial sync. Fixing this sounds simple but there was also an issue with Epic just sending
+   raw stories, and expecting Poker to know how to convert them. This certainly violates a few
+   principles and needs to be reworked. I spent the rest of the day working on this refactoring and had
+   a decent solution by the end of the day. Epic now converts stories into poker stories before sending
+   them over.</p>
+
+ </div>
+</div>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
   <h1 class="align-middle text-center col-10"><b>Day 113 - 7/13/2024</b></h1>
  </div>
 
