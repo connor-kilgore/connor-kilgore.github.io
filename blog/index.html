@@ -79,6 +79,58 @@
 <div class="container bg-light">
  <br>
  <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 120 - 7/24/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row justify-content-center" style="margin: 20px">
+  <p>
+   Going into today I got started on a new story that I anticipate to be pretty tricky. I have to
+   refactor Epic to be able to give project updates to users not currently present in a project. Greg
+   found this coupling last week because it interfered with the weekly page being able to receive push
+   updates because users in the weekly page aren't actually in projects.</p>
+  <p>
+   I found one route to take would be to remove the unique property from connection-id's on members, but
+   I wasn't sure if this was feasible, I ended up speaking to Brandon about it to see what he thinks.
+   Brandon told me that a temporary solution is to store unique connection-id's on users in the db, then
+   have members have non-unique connection-id's on their entities. By doing this I'm able to link a member
+   to a user, then send push updates to all of that user's connections.</p>
+  <p>
+   Brandon left me with a pretty involved list of steps that I can follow to achieve this outcome, so
+   I started following it step by step. By the end of the day I got through most of them but still had a lot
+   of work ahead of me, I'm incidentally a bit behind on this story. I'll work on it for a bit tomorrow
+   but I should prioritize my other story in the meantime.</p>
+
+ </div>
+</div>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 119 - 7/23/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row justify-content-center" style="margin: 20px">
+  <p>
+   The first story I did this week was to save data in Speclj to a safety file for the vigilant runner.
+   I had brought this concern up to Micah a few weeks ago because I found developing with the vigilant
+   runner was quite confusing when it's deleting necessary saved data in the files when they are refreshed.</p>
+  <p>
+   I had to do a lot of tinkering to come to a solution but found a good approach is to just have the vigilant
+   runner ignore all files that have some form of save state that should be preserved upon reloading files.
+   Creating the function took a bit of time, but after about two hours I had something that worked pretty well.</p>
+  <p>
+   My next step was to just go through each file and see which files break the whole program when they are reloaded.
+   Once I identified them, I put them on a blacklist that prevents the vigilant runner from watching them until
+   the program is entirely reset. Finishing this story in one day is a strong start to my week!</p>
+
+ </div>
+</div>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
   <h1 class="align-middle text-center col-10"><b>Day 118 - 7/22/2024</b></h1>
  </div>
 
