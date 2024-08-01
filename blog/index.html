@@ -76,7 +76,93 @@
      style="background-color:white; color:black; margin-right: 10px; padding: 2px">101-110</a>
   <a class="nav-item rounded" href="./111-120"
      style="background-color:white; color:black; margin-right: 10px; padding: 2px">111-120</a>
- </h3></div>
+
+  <div class="container bg-light">
+   <br>
+   <div class="row justify-content-center">
+    <h1 class="align-middle text-center col-10"><b>Day 125 - 7/31/2024</b></h1>
+   </div>
+
+   <br><br>
+   <div class="row justify-content-center" style="margin: 20px">
+    <p>
+     I felt good going into today having finished my Aesop story yesterday. It was intimidating, but
+     I got it done, it'll be a good demo for Friday. I picked up another story that was an investigative
+     story on some lag that Epic has around Tags.</p>
+    <p>
+     I took all day but long story short, the issue with the tags was they didn't update on the client
+     end until the push-handler went through. On larger projects this appears delayed giving a lag effect.
+     I made the client now update on their end, and send a push update just to speed things up a bit.
+     I found a weird inconsistency with how the push-handlers work. Sometimes they get sent very quickly,
+     and other times they lag a few hundred milliseconds. This happens for smaller projects too, but those
+     few hundred milliseconds are more like 20-30 milliseconds which is imperceptible.</p>
+    <p>
+     I also found that whenever a push is done, pretty much the entire project is updated which seems
+     wasteful, I want to see if it's possible to make updates happen to just the portion that was touched
+     instead to preserve resources in larger projects. Tomorrow I'm going to look under the hood of wire
+     and see if I can find anything out about these concerns.
+    </p>
+
+   </div>
+  </div>
+
+  <div class="container bg-light">
+   <br>
+   <div class="row justify-content-center">
+    <h1 class="align-middle text-center col-10"><b>Day 124 - 7/30/2024</b></h1>
+   </div>
+
+   <br><br>
+   <div class="row justify-content-center" style="margin: 20px">
+    <p>
+     Today is day two, and the last day of implementation of the first step of Aesop.
+     I put a lot of effort into getting three features working properly. Fetching all issues,
+     creating new issues in bulk format, and editing a single issue.</p>
+    <p>
+     Fetching issues wasn't all that difficult since I'd mostly finished it up yesterday,
+     however I needed some better tests for it which took longer. I was able to use epic and poker
+     as guides since I was effectively doing the same thing as them, just for a different API.</p>
+    <p>
+     By about midday I had some good tests set up, and I started a new test library to simulate
+     Jira and Epic entities. With a better foundation I could focus more on the new features.</p>
+    <p>
+     Naturally the rest of the day was dedicated to creating and editing. I was hoping creating wouldn't
+     be as tricky, it did take a little while to get it working how I'd hoped. Editing took
+     even longer, but I managed to get everything done and tested by around 5pm. I figured this
+     was plenty to constitute a solid barebones step-1 for Aesop, so I pushed to a repo and handed it off
+     to greg to get started on step 2.</p>
+
+   </div>
+  </div></h3></div>
+
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
+  <h1 class="align-middle text-center col-10"><b>Day 123 - 7/29/2024</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row justify-content-center" style="margin: 20px">
+  <p>
+   This week I'm taking on a new challenge that I've been pretty excited to get started. Last week
+   I spiked a story with Greg for a new server that will act as an interface between Epic and Jira
+   to tell stories. To start this project, I got to be the one to start the server initially.</p>
+  <p>
+   Starting off I pulled a template from the clean coders organization and started brainstorming a name
+   that I'll pitch this Friday. I ended up going with Aesop after a famous greek fabulist and
+   storyteller. The idea is that this project will effectively be a storyteller so the idea seems
+   fitting.</p>
+  <p>
+   My progress was slow today as I was touching some new concepts with what's involved with starting
+   a new project on the clean coders stack. I had to figure out what I did and didn't need. I wasted
+   some time thinking I'd need a front end but later found out that wouldn't be the case. I ended
+   the day with the project set up and having a very informal way to retrieve and display stories.
+   I still have some work to do, but it was good work for day one.
+  </p>
+
+ </div>
+</div>
 
 <div class="container bg-light">
  <br>
