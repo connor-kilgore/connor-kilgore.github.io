@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title> Connor Kilgore - Portfolio </title>
+
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ <link rel="stylesheet" href="/assets/styles.css">
+</head>
+
+<body>
+<!-- Navigation header -->
+<nav data-include="header" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-light">
+ <div class="container-fluid">
+  <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+   <ul class="navbar-nav flex-grow-1">
+    <a class="nav-item nav-link rounded" href="/"
+       style="background-color:white; color:black; margin-right: 10px;">Home</a>
+    <a class="nav-item nav-link rounded" href="/work"
+       style="background-color:white; color:black; margin-right: 10px;">Work</a>
+    <a class="nav-item nav-link rounded" href="/blog"
+       style="background-color:white; color:black; margin-right: 10px;">Blog</a>
+    <a class="nav-item nav-link rounded" href="/resume"
+       style="background-color:white; color:black; margin-right: 10px;">Resume</a>
+    <a class="nav-item nav-link rounded" href="mailto:connor.kilgore@gmail.com"
+       style="background-color:white; color:black; margin-right: 10px;">Contact</a>
+   </ul>
+  </div>
+ </div>
+</nav>
+
+<br><br>
+
+<div class="container bg-light">
+ <br>
+ <div class="row justify-content-center">
+  <h1 class="align-middle text-center"><b>Mastering Reagent: How to Decouple Components for a Cleaner, More Efficient UI</b></h1>
+ </div>
+
+ <br><br>
+ <div class="row" style="margin: 20px">
+  <p>
+   One of the main goals a Clean Coders strives for is a decoupled system. I've learned a lot of strategies
+   for achieving this effect, most notably through the SOLID principles. Every good system tries to separate their
+   functions, classes, files, system components, and more. We follow this practice to optimize and adapt our
+   software systems, it helps avoid the negative side effects that appear in a tightly bound system. Despite
+   the clear benefits of this practice, I've found that React.js components are often an exception that seeps through
+   the cracks.</p>
+  <p>
+   Since noticing, I've theorized why decoupling React is not just done naturally, my speculation comes down to
+   two possibilities.
+  </p>
+  <p>
+   <b>1.</b> having a noticeable negative impact from a coupled React system is hard to accomplish. You'd never notice it
+   on smaller projects with less HTML to render.</p>
+  <p>
+   <b>2.</b> the innate subtlety of inefficient React components. It takes a lot of close looking and debugging just to
+   even notice that certain components are getting needlessly re-rendered. </p>
+  <p>
+   After reflecting, I realized that React components should be treated the same as any other code, Conforming to the
+   SOLID principles. To properly demonstrate common
+   mis-practice, and how to clean them up, I shall be referring to Reagent. This popular library
+   serves as an interface for React.js in ClojureScript.</p>
+
+ </div><div class="row" style="margin: 20px">
+  <h3>What is the purpose of a component?</h3>
+  <p>
+   Components in Reagent are simply functions that return HTML. We use them to render complex layouts in an organized
+   fashion. For example, let's say I'm rendering a barn from a farm. To render it, I'd create my component as so.
+  </p>
+
+  <pre>
+   <code>
+    (defn barn []
+     [:h2 "I am a barn"])
+   </code>
+  </pre>
+
+  <p>
+   I have a simple function that when called to render, will display a simple h2 element. I could however expand upon
+   this and add animals that belong in the barn, such as cows and sheep.
+  </p>
+
+  <pre>
+   <code>
+     (defn barn []
+       [:div
+        [:h2 "I am a barn"]
+        [:h3 "We are cows"]
+        [:h3 "We are sheep"]])
+   </code>
+  </pre>
+
+  <p>
+   Now if I look through the lenses of a Clean Coder, I can see that this is a violation of the Single Responsibility
+   Principle. The barn should be in charge of only the barn, not the animals. Therefore, we should put cows and sheep in
+   their own component.
+  </p>
+
+  <pre>
+   <code>
+     (defn animals []
+       [:div
+        [:h3 "We are cows"]
+        [:h3 "We are sheep"]])
+
+     (defn barn []
+       [:div
+        [:h2 "I am a barn"]
+        [animals]])
+   </code>
+  </pre>
+ </div>
+ <div class="row" style="margin: 20px">
+
+  <h3>Decoupling components from each other</h3>
+  <p>
+   Next is the fun part. If I wish to create a front-end that allows user interaction, I will need to
+   update the rendered HTML in some shape or form. Reagent is great at accomplishing this through the use of
+   <b> reagent-atoms (ratoms)</b> and <b>reagent-trackers</b>. For example, I can update how
+   many cows live in the barn with the use of a click event like so.
+  </p>
+
+  <pre>
+   <code>
+     (defn animals [cow-num]
+       [:div
+        [:h3 (str "there are " @cow-num " cows.")]
+        [:h3 "We are sheep"]])
+
+     (defn barn []
+       (let [cow-num (r/atom 0)]
+         [:div
+          [:h2 "I am a barn"]
+          [animals cow-num]
+          [:button {:on-click #(swap! cow-num inc)} "Add Cow"]]))
+   </code>
+  </pre>
+
+  <p>
+   Each click of the button will update the ratom, which subsequently re-renders any component that uses it.
+   Thankfully, Reagent is smart enough to know that barn isn't actually using the ratom, just holding it, so
+   we don't re-render barn. We do however re-render sheep, a completely unnecessary coupling! You may think it's
+   not that harmful, sheep are represented by only a single h2 tag after all. But imagine I represented a single sheep with a
+   more complex div, and had hundreds of sheep actively rendered. Updating cows forces my
+   webpage to reload hundreds of divs that have nothing to do with cows. To avoid this worst-case scenario,
+   lets separate these components.
+  </p>
+
+  <pre>
+   <code>
+     (defn cows [cow-num]
+       [:h3 (str "there are " @cow-num " cows.")])
+
+     (defn sheep [sheep-num]
+       [:h3 (str "there are " @sheep-num " sheep.")])
+
+     (defn animals []
+       (let [cow-num (r/atom 0)
+             sheep-num (r/atom 0)]
+         [:div
+          [cows cow-num]
+          [sheep sheep-num]
+          [:button {:on-click #(swap! cow-num inc)} "Add Cow"]
+          [:button {:on-click #(swap! sheep-num inc)} "Add Sheep"]]))
+   </code>
+  </pre>
+ </div>
+ <div class="row" style="margin: 20px">
+  <h3>What's the deal with inner-functions?</h3>
+
+  <p>If you've used Reagent enough, you've probably seen a component that contains a function within it like this.</p>
+
+  <pre>
+   <code>
+   (defn barn []
+     (let [hay-bales-num (r/atom 0)]
+       (fn []
+         [:div
+          [:h3 (str "there are " @hay-bales-num " hay bales.")]
+          [:button {:on-click #(swap! hay-bales-num inc)} "Add Hay Bale"]])))
+   </code>
+  </pre>
+
+  <p>
+   Don't be alarmed by the inner nested function-it distinguishes the part of the component that should run only
+   once from the part that should update in response to state changes. Had I not used this inner function,
+   I would not be able to get the intended behavior of hay bales incrementing. Each time I increment hay-bales-num, I
+   would re-run the entire function, including the initialization of the ratom. Consequently, hay-bales-num will perpetually
+   remain 0. However, thanks to the use of the inner-function, I'm able to tell Reagent that I want the
+   initialization of my ratom to only happen once, while still running the inner-function in response to state change.
+   This notation is almost logically the same as:
+  </p>
+
+  <pre>
+   <code>
+   (defn hay [hay-bales-num]
+      [:h3 (str "there are " @hay-bales-num " hay bales.")])
+
+   (defn barn []
+     (let [hay-bales-num (r/atom 0)]
+       [:div
+        [hay hay-bales-num]
+        [:button {:on-click #(swap! hay-bales-num inc)} "Add Hay Bale"]]))
+   </code>
+  </pre>
+
+ </div>
+
+ <div class="row" style="margin: 20px">
+  <h3>[] vs (): What's the difference?</h3>
+
+  <p>
+   Now that we've clarified inner-function usage, we can get back to decoupling. Remembering earlier, React
+   components are simply functions that return HTML. However, there's two ways to use them.
+   <br>
+   <b>1.</b> We can call them in square brackets "<b>[]</b>", which is a traditional way of treating the function
+   as a reactive component. This tells reagent that it should listen for state-change, then re-run the component
+   on state-change that is relevant to itself.
+   <br>
+   <b>2.</b> The more commonly misused method is the parenthesis "<b>()</b>". When a Reagent function is called
+   with (), it is logically the same as just nesting the code in the higher level component. i.e.
+  </p>
+
+  <pre>
+   <code>
+   (defn hay [hay-bales-num]
+      [:h3 (str "there are " @hay-bales-num " hay bales.")])
+
+   (defn barn []
+     (let [hay-bales-num (r/atom 0)]
+       [:div
+        (hay hay-bales-num)
+        [:button {:on-click #(swap! hay-bales-num inc)} "Add Hay Bale"]]))
+
+    is the same as:
+
+    (defn barn []
+     (let [hay-bales-num (r/atom 0)]
+       [:div
+        [:h3 (str "there are " @hay-bales-num " hay bales.")]
+        [:button {:on-click #(swap! hay-bales-num inc)} "Add Hay Bale"]]))
+   </code>
+  </pre>
+
+  <p>
+   As previously discussed, this will not have the intended behavior because now hay-bales-num is getting
+   re-initialized on state-change again. To be fair, this unintended behavior will be quickly noticed, but the practice
+   of coupling your functions like this can be dangerous. Instead of making it a component, a developer may reasonably
+   decide to use an inner-function as previously discussed.
+  </p>
+
+  <pre>
+   <code>
+   (defn hay [hay-bales-num]
+      [:h3 (str "there are " @hay-bales-num " hay bales.")])
+
+   (defn barn []
+     (let [hay-bales-num (r/atom 0)]
+       (fn []
+         [:div
+          (hay hay-bales-num)
+          [:button {:on-click #(swap! hay-bales-num inc)} "Add Hay Bale"]])))
+   </code>
+  </pre>
+
+  <p>
+   Now we've achieved intended behavior again. We aren't reinitializing the ratom in response to state change.
+   However, it is important to remember; using () is the same as just nesting the functions code inside the higher
+   level function. With this solution we don't just re-render hay, we also re-render barn, it's like the
+   sheep conundrum all over again! Therefore, in this scenario I'd recommend using [] instead.</p>
+  <p>
+   Now the question is, when is () appropriate? Well I've found that the use of () is really just used for
+   readability. Since it is logically equivalent to nesting code it isn't actually necessary at all. But
+   we are Clean Coders, it's worth the effort! Take this example:</p>
+
+  <pre>
+   <code>
+   (defn hay-bale [i num]
+     (if (= i num)
+       [:h4 (str "I am hay bale #" i "!")]
+       [:h4 (str "Hello haybale #" num "!")]))
+
+   (defn hay [hay-bales-num]
+     (doall
+       (for [i (range @hay-bales-num)]
+         (hay-bale i (dec @hay-bales-num)))))
+   </code>
+  </pre>
+
+  <p>
+   Here I have an indeterminate amount of hay-bales. Each time I increment hay-bales I want all the previous
+   hay-bales to say hi to the newest addition. This is an example where re-rendering all my html is intended,
+   therefore I'll use () simply to make it more readable for other developers when they come along and see my code.
+   <b>NOTE: This code generates a warning because I didn't use unique keys for my list elements. I decided
+   not to add a key for the sake of simplicity of this example.</b>
+  </p>
+
+ </div>
+ <div class="row" style="margin: 20px">
+  <h3>Concluding Arguments</h3>
+  <p>
+   We must aim to separate our components from one another when possible, this is key to keeping our front end from
+   doing more work than necessary. I do not want to re-render my entire barn when I change a single cow.
+   And likewise, I do not want to re-render all my cows whenever I change my barn. We must recognize that Reagent
+   code is different to traditional code. Using () calls is not enough to conform to Single Responsibility Principle,
+   because by doing so, I have conjoined my two components together. As a Clean Coder we must comply to SOLID and always
+   aim to decouple our systems. Reagent, and therefore React, work different to regular code, our practices should
+   reflect that. If you follow these guidelines, your React webpage will be cleaner than ever.
+  </p>
+ </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
