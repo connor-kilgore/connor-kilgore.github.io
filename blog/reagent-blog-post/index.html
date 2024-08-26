@@ -40,273 +40,325 @@
  <br><br>
  <div class="row" style="margin: 20px">
   <p>
-   One of the main goals a Clean Coder strives for is a decoupled system. I've learned a lot of strategies
-   for achieving this effect, most notably through the SOLID principles. Every good system tries to separate their
-   functions, classes, files, system components, and more. We follow this practice to optimize and adapt our
-   software systems, it helps avoid the negative side effects that appear in a tightly bound system. Despite
-   the clear benefits of this practice, I've found that React.js components are often an exception that seeps through
-   the cracks.</p>
+   At Clean Coders, we strive to make our code as clean as possible. Clean code must find a balance between
+   readability and efficiency. Ideally readable code is not always the most efficient, similarly, optimal efficiency
+   can be at the cost of how easy the code is for other contributors to read. The best way to find this balance is
+   to establish practices that can be followed and built off. With these ideologies, it is important to utilize them
+   in all frameworks of code, including the more atypical ones like React.</p>
   <p>
-   Since noticing, I've theorized why decoupling React is not just done naturally, my speculation comes down to
-   two possibilities.
-  </p>
-  <p>
-   <b>1.</b> having a noticeable negative impact from a coupled React system is hard to accomplish. You'd never notice it
-   on smaller projects with less HTML to render.</p>
-  <p>
-   <b>2.</b> the innate subtlety of inefficient React components. It takes a lot of close looking and debugging just to
-   even notice that certain components are getting needlessly re-rendered. </p>
-  <p>
-   After reflecting, I realized that React components should be treated the same as any other code, Conforming to the
-   SOLID principles. To properly demonstrate common
-   mis-practice, and how to clean them up, I shall be referring to Reagent. This popular library
-   serves as an interface for React.js in ClojureScript.</p>
+   <a href="https://react.dev/">React</a> is a javascript framework that uses the component data structure to
+   create markup that is both modular and reusable. Due to the nature of the framework existing for a markup
+   language, there need not be as much worry on finding the aforementioned balance. There is no presence of
+   logic, but rather markup is about structure. Even so, React components should be treated the same as any other code,
+   Conforming to a balance between efficiency and readability. To properly demonstrate an establishment of balance,
+   <a href="https://reagent-project.github.io/">Reagent</a> shall be used. This library
+   "provides a minimalistic interface between ClojureScript and React."</p>
 
  </div><div class="row" style="margin: 20px">
   <h3>What is the purpose of a component?</h3>
   <p>
-   Components in Reagent are simply functions that return HTML. We use them to render complex layouts in an organized
-   fashion. For example, let's say I'm rendering a barn from a farm. To render it, I'd create my component as so.
+   Creating a website will more than likely result in the need of reusable HTML. For example, it may be beneficial to
+   have a navigation bar at the top of every page. Should the markup be manually rewritten on each webpage? Similar to a
+   function call in a typical programming language, a component can be utilized to reference a predefined reusable
+   markup. Here's a simple example of how a component might be reused:
   </p>
 
-  <pre>
-   <code>
-    (defn barn []
-     [:h2 "I am a barn"])
+  <pre class="">
+   <code class="hljs">
+== BEFORE ==
+
+(<span class="hljs-keyword">defn</span> <span class="hljs-title">barn</span> []
+ [<span class="hljs-name">:div</span>
+  [<span class="hljs-name">:h2</span> <span class="hljs-string">"This barn contains"</span>]
+  [<span class="hljs-name">:div</span>
+    ... animal markup ...
+    [<span class="hljs-name">:h3</span> <span class="hljs-string">"cows"</span>]]
+  [<span class="hljs-name">:div</span>
+    ... animal markup ...
+    [<span class="hljs-name">:h3</span> <span class="hljs-string">"sheep"</span>]]])
+   </code>
+  </pre>
+
+ <pre class="ml-5">
+   <code class="hljs">
+== AFTER ==
+
+(<span class="hljs-keyword">defn</span> <span class="hljs-title">animals</span> [name]
+  [<span class="hljs-name">:div</span>
+    ... animal markup ...
+    [<span class="hljs-name">:h3</span> name]])
+
+(<span class="hljs-keyword">defn</span> <span class="hljs-title">barn</span> []
+  [<span class="hljs-name">:div</span>
+   [<span class="hljs-name">:h2</span> <span class="hljs-string">"This barn contains"</span>]
+   (<span class="hljs-keyword">animals</span> <span class="hljs-string">"cows"</span>)
+   (<span class="hljs-keyword">animals</span> <span class="hljs-string">"sheep"</span>)])
    </code>
   </pre>
 
   <p>
-   I have a simple function that when called to render, will display a simple h2 element. I could however expand upon
-   this and add animals that belong in the barn, such as cows and sheep.
+   In this case, the before markup shows most of the cows and sheep divs being rewritten, the after places them into
+   separate functions to be reused without any unnecessary redundancy. Now when referring to the scale
+   of balance, the only factor involved is readability. This is because the barn component is not affected by state
+   change and is therefore static. Choosing between the before and after solely comes down to what is deemed more
+   readable. Using a simpler div for animals would make the before example the go to, while a more complex div for
+   animals would justify the after example where the rewritten code is extracted.
   </p>
-
-  <pre>
-   <code>
-     (defn barn []
-       [:div
-        [:h2 "I am a barn"]
-        [:h3 "We are cows"]
-        [:h3 "We are sheep"]])
-   </code>
-  </pre>
-
-  <p>
-   Now if I look through the lenses of a Clean Coder, I can see that this is a violation of the Single Responsibility
-   Principle. The barn should be in charge of only the barn, not the animals. Therefore, we should put cows and sheep in
-   their own component.
-  </p>
-
-  <pre>
-   <code>
-     (defn animals []
-       [:div
-        [:h3 "We are cows"]
-        [:h3 "We are sheep"]])
-
-     (defn barn []
-       [:div
-        [:h2 "I am a barn"]
-        [animals]])
-   </code>
-  </pre>
  </div>
  <div class="row" style="margin: 20px">
 
   <h3>Decoupling components from each other</h3>
   <p>
-   Next is the fun part. If I wish to create a front-end that allows user interaction, I will need to
-   update the rendered HTML in some shape or form. Reagent is great at accomplishing this through the use of
-   <b> reagent-atoms (ratoms)</b> and <b>reagent-trackers</b>. For example, I can update how
-   many cows live in the barn with the use of a click event like so.
+   Next is the fun part. When creating a front-end that allows user interaction, it will need to
+   update the rendered markup in some shape or form. Reagent is great at accomplishing this through the use of
+   <b> reagent-atoms (ratoms)</b> and <b>reagent-trackers</b>. For example, the number of cows that are present
+   could be incremented with the use of a button:
   </p>
 
   <pre>
-   <code>
-     (defn animals [cow-num]
-       [:div
-        [:h3 (str "there are " @cow-num " cows.")]
-        [:h3 "We are sheep"]])
-
-     (defn barn []
-       (let [cow-num (r/atom 0)]
-         [:div
-          [:h2 "I am a barn"]
-          [animals cow-num]
-          [:button {:on-click #(swap! cow-num inc)} "Add Cow"]]))
+   <code class="hljs">
+(<span class="hljs-keyword">defn</span> <span class="hljs-title">barn</span> []
+ (<span class="hljs-keyword">let</span> [cow-num (<span class="hljs-keyword">r/atom</span> 0)]
+   (<span class="hljs-keyword">fn</span> []
+     [<span class="hljs-name">:div</span>
+      [<span class="hljs-name">:h2</span> <span class="hljs-string">"This barn contains"</span>]
+      [<span class="hljs-name">:div</span> [<span class="hljs-name">:h3</span> (<span class="hljs-keyword">str</span> @cow-num " cows")]]
+      [<span class="hljs-name">:button</span> {<span class="hljs-name">:on-click</span> #(<span class="hljs-keyword">swap!</span> cow-num inc)} <span class="hljs-string">"Add"</span>]])))
    </code>
   </pre>
 
   <p>
    Each click of the button will update the ratom, which subsequently re-renders any component that uses it.
-   Thankfully, Reagent is smart enough to know that barn isn't actually using the ratom, just holding it, so
-   we don't re-render barn. We do however re-render sheep, a completely unnecessary coupling! You may think it's
-   not that harmful, sheep are represented by only a single h2 tag after all. But imagine I represented a single sheep with a
-   more complex div, and had hundreds of sheep actively rendered. Updating cows forces my
-   webpage to reload hundreds of divs that have nothing to do with cows. To avoid this worst-case scenario,
-   lets separate these components.
-  </p>
+   Because of how the barn component is set up, it is coupled to cows. Any changes to cows will force barn to
+   be entirely re-rendered, this is a
+   <b>Single Responsibility Principle (SRP)</b> violation. Now with this example, it is an inexpensive render,
+   but as barn grows in complexity
+   with its nested elements, the cost of this coupling will continue to rise. Here is where the first crossroads
+   between performance and readability appear. On one hand, performance can be prioritized at the cost
+   that this code will be less clear for collaborators to understand. On the other, focusing readability could lead to
+   future performance issues that are difficult to find. Generally, it is good practice to decide which road to take
+   based on anticipated future cost of this component. While barn may stay relatively small and inexpensive, cows could
+   be represented by hundreds of rendered divs to represent each cow. Having this expectation leads to the conclusion
+   that performance needs to take priority over readability. To do so, cows is extracted into its own component using
+   the earlier animals function:</p>
 
   <pre>
-   <code>
-     (defn cows [cow-num]
-       [:h3 (str "there are " @cow-num " cows.")])
+   <code class="hljs">
+(<span class="hljs-keyword">defn</span> <span class="hljs-title">animals</span> [name]
+  (<span class="hljs-keyword">let</span> [num (<span class="hljs-keyword">r/atom</span> 0)]
+    (<span class="hljs-keyword">fn</span> []
+      [<span class="hljs-name">:div</span> [<span class="hljs-name">:h3</span> (<span class="hljs-keyword">str</span> @num " " name)]
+      [<span class="hljs-name">:button</span> {<span class="hljs-name">:on-click</span> #(<span class="hljs-keyword">swap!</span> num inc)} <span class="hljs-string">"Add"</span>]])))
 
-     (defn sheep [sheep-num]
-       [:h3 (str "there are " @sheep-num " sheep.")])
-
-     (defn animals []
-       (let [cow-num (r/atom 0)
-             sheep-num (r/atom 0)]
-         [:div
-          [cows cow-num]
-          [sheep sheep-num]
-          [:button {:on-click #(swap! cow-num inc)} "Add Cow"]
-          [:button {:on-click #(swap! sheep-num inc)} "Add Sheep"]]))
-   </code>
-  </pre>
- </div>
- <div class="row" style="margin: 20px">
-  <h3>What's the deal with inner-functions?</h3>
-
-  <p>If you've used Reagent enough, you've probably seen a component that contains a function within it like this.</p>
-
-  <pre>
-   <code>
-   (defn barn []
-     (let [hay-bales-num (r/atom 0)]
-       (fn []
-         [:div
-          [:h3 (str "there are " @hay-bales-num " hay bales.")]
-          [:button {:on-click #(swap! hay-bales-num inc)} "Add Hay Bale"]])))
+(<span class="hljs-keyword">defn</span> <span class="hljs-title">barn</span> []
+  [<span class="hljs-name">:div</span>
+   [<span class="hljs-name">:h2</span> <span class="hljs-string">"This barn contains"</span>]
+   [animals <span class="hljs-string">"cows"</span>]])
    </code>
   </pre>
 
   <p>
-   Don't be alarmed by the inner nested function-it distinguishes the part of the component that should run only
-   once from the part that should update in response to state changes. Had I not used this inner function,
-   I would not be able to get the intended behavior of hay bales incrementing. Each time I increment hay-bales-num, I
-   would re-run the entire function, including the initialization of the ratom. Consequently, hay-bales-num will perpetually
-   remain 0. However, thanks to the use of the inner-function, I'm able to tell Reagent that I want the
-   initialization of my ratom to only happen once, while still running the inner-function in response to state change.
-   This notation is almost logically the same as:
+   With this change, any increments of cows will only rerender cows, barn will remain unaffected by any state changes.
+   Similarly, sheep can be reintroduced as their own component. Any state changes on sheep will neither affect
+   barn nor cows, only sheep.
   </p>
+ </div>
+ <div class="row" style="margin: 20px">
+  <h3>What's the deal with inner-functions?</h3>
+
+  <p>
+   From the previous examples, the use of inner-functions has appeared, what is the purpose of them? How are they used?
+   Don't be alarmed by the inner nested function-it distinguishes the part of the component that should run only
+   once from the part that should update in response to state changes. Had the inner function in the animals
+   component not been used, cows would be unable to properly increment. Take this example without the inner-function:
+   </p>
 
   <pre>
-   <code>
-   (defn hay [hay-bales-num]
-      [:h3 (str "there are " @hay-bales-num " hay bales.")])
+   <code class="hljs">
+== THIS WILL NOT WORK ==
 
-   (defn barn []
-     (let [hay-bales-num (r/atom 0)]
-       [:div
-        [hay hay-bales-num]
-        [:button {:on-click #(swap! hay-bales-num inc)} "Add Hay Bale"]]))
+(<span class="hljs-keyword">defn</span> <span class="hljs-title">animals</span> [name]
+  (<span class="hljs-keyword">let</span> [num (<span class="hljs-keyword">r/atom</span> 0)]
+      [<span class="hljs-name">:div</span> [<span class="hljs-name">:h3</span> (<span class="hljs-keyword">str</span> @num " " name)]
+      [<span class="hljs-name">:button</span> {<span class="hljs-name">:on-click</span> #(<span class="hljs-keyword">swap!</span> num inc)} <span class="hljs-string">"Add"</span>]]))
    </code>
   </pre>
 
+  <p>
+   Each time the button to add a new animal is clicked, the entire function would be run again. This is because a ratom
+   that is used in the component is updated, Reagent components are reactive, therefore they update in response to
+   state change. Without the inner-function to act as a partition between the run-once and the run-on-change behavior,
+   the animals component will proceed to re-initialize the ratom at zero.
+   With the use of the inner-function, the animals component now knows to only initialize the ratom on the first time
+   the component is rendered. Every subsequent rendering will only affect the code that exists within the inner
+   function, allowing the incrementing to take effect.
+  </p>
  </div>
 
  <div class="row" style="margin: 20px">
   <h3>[] vs (): What's the difference?</h3>
 
   <p>
-   Now that we've clarified inner-function usage, we can get back to decoupling. Remembering earlier, React
-   components are simply functions that return HTML. However, there's two ways to use them.
+   Now that inner-functions have been clarified, the difference between brackets and parenthesis must be understood
+   as well. When defining a function to be used in a component, it can be called in one of two ways.
    <br>
-   <b>1.</b> We can call them in square brackets "<b>[]</b>", which is a traditional way of treating the function
-   as a reactive component. This tells reagent that it should listen for state-change, then re-run the component
-   on state-change that is relevant to itself.
+   <b>1.</b> Square brackets "<b>[]</b>", which is a traditional way of treating the function
+   as a reactive component. By creating a component, the structure of the newly created component will become
+   decoupled from the parent component that it presides in. i.e. animals will decouple from barn.
    <br>
-   <b>2.</b> The more commonly misused method is the parenthesis "<b>()</b>". When a Reagent function is called
-   with (), it is logically the same as just nesting the code in the higher level component. i.e.
+   <b>2.</b> Parenthesis "<b>()</b>". When a Reagent function is called with (), it is logically the same as just
+   nesting the code in the higher level component. Using () is meant for reusing static markup that would not change
+   how it is rendered from any state changes. Following the examples so far, barn may contain a hay bale that
+   does not change in quantity like animals, therefore it will always be a hay bale.
   </p>
 
   <pre>
-   <code>
-   (defn hay [hay-bales-num]
-      [:h3 (str "there are " @hay-bales-num " hay bales.")])
+   <code class="hljs">
+(<span class="hljs-keyword">defn</span> <span class="hljs-title">animals</span> [name]
+  (<span class="hljs-keyword">let</span> [num (<span class="hljs-keyword">r/atom</span> 0)]
+    (<span class="hljs-keyword">fn</span> []
+      [<span class="hljs-name">:div</span> [<span class="hljs-name">:h3</span> (<span class="hljs-keyword">str</span> @num " " name)]
+      [<span class="hljs-name">:button</span> {<span class="hljs-name">:on-click</span> #(<span class="hljs-keyword">swap!</span> num inc)} <span class="hljs-string">"Add"</span>]])))
 
-   (defn barn []
-     (let [hay-bales-num (r/atom 0)]
-       [:div
-        (hay hay-bales-num)
-        [:button {:on-click #(swap! hay-bales-num inc)} "Add Hay Bale"]]))
+(<span class="hljs-keyword">defn</span> <span class="hljs-title">hay-bale</span> []
+ [<span class="hljs-name">:h3</span> <span class="hljs-string">"a hay bale"</span>])
 
-    is the same as:
-
-    (defn barn []
-     (let [hay-bales-num (r/atom 0)]
-       [:div
-        [:h3 (str "there are " @hay-bales-num " hay bales.")]
-        [:button {:on-click #(swap! hay-bales-num inc)} "Add Hay Bale"]]))
+(<span class="hljs-keyword">defn</span> <span class="hljs-title">barn</span> []
+  [<span class="hljs-name">:div</span>
+   [<span class="hljs-name">:h2</span> <span class="hljs-string">"This barn contains"</span>]
+   (<span class="hljs-title">hay-bale</span>)
+   [animals <span class="hljs-string">"cows"</span>]])
    </code>
   </pre>
 
   <p>
-   As previously discussed, this will not have the intended behavior because now hay-bales-num is getting
-   re-initialized on state-change again. To be fair, this unintended behavior will be quickly noticed, but the practice
-   of coupling your functions like this can be dangerous. Instead of making it a component, a developer may reasonably
-   decide to use an inner-function as previously discussed.
+   Unlike components, calling functions with () does not provide any potential boost in performance, therefore this
+   extraction of hay-bale only has a negative effect of making the code harder to read. Typically, the use of ()
+   will occur during refactoring; once it is discovered that hay-bale could be reusable in other components, extracting
+   it out will become useful. This is also under the assumption that hay-bale is more complex than a simple h3
+   element.</p>
+
+  <p>
+   Understanding the difference between [] and () becomes important because misuse of them can lead to decreasing
+   performance without increasing readability whatsoever. If the implementation of cows is reorganized such that the
+   ratom is passed into the cows function, the same behavior can be achieved through either [] or (). However,
+   in this scenario, calling the cows function will rerender barn if through (), and will not if through [].
   </p>
 
   <pre>
-   <code>
-   (defn hay [hay-bales-num]
-      [:h3 (str "there are " @hay-bales-num " hay bales.")])
+   <code class="hljs">
+(<span class="hljs-keyword">defn</span> <span class="hljs-title">cows</span> [num]
+ [<span class="hljs-name">:div</span> [<span class="hljs-name">:h3</span> (<span class="hljs-title">str</span> @num <span class="hljs-string">" cows"</span>)]])
 
-   (defn barn []
-     (let [hay-bales-num (r/atom 0)]
-       (fn []
-         [:div
-          (hay hay-bales-num)
-          [:button {:on-click #(swap! hay-bales-num inc)} "Add Hay Bale"]])))
+
+== WILL RERENDER BARN ==
+
+(<span class="hljs-keyword">defn</span> <span class="hljs-title">barn</span> []
+  (<span class="hljs-title">let</span> [cow-num (<span class="hljs-title">r/atom</span> 0)]
+    (<span class="hljs-title">fn</span> []
+      [<span class="hljs-name">:div</span>
+       [<span class="hljs-name">:h2</span> "This barn contains"]
+       (<span class="hljs-title">cows</span> cow-num)
+       [<span class="hljs-name">:button</span> {<span class="hljs-name">:on-click</span> #(<span class="hljs-title">swap!</span> cow-num inc)} <span class="hljs-string">"Add"</span>]])))
+
+
+== WON'T RERENDER BARN ==
+
+(<span class="hljs-keyword">defn</span> <span class="hljs-title">barn</span> []
+ (<span class="hljs-title">let</span> [cow-num (<span class="hljs-title">r/atom</span> 0)]
+   (<span class="hljs-title">fn</span> []
+     [<span class="hljs-name">:div</span>
+      [<span class="hljs-name">:h2</span> "This barn contains"]
+      [cows cow-num]
+      [<span class="hljs-name">:button</span> {<span class="hljs-name">:on-click</span> #(<span class="hljs-title">swap!</span> cow-num inc)} <span class="hljs-string">"Add"</span>]])))
    </code>
   </pre>
 
   <p>
-   Now we've achieved intended behavior again. We aren't reinitializing the ratom in response to state change.
-   However, it is important to remember; using () is the same as just nesting the functions code inside the higher
-   level function. With this solution we don't just re-render hay, we also re-render barn, it's like the
-   sheep conundrum all over again! Therefore, in this scenario I'd recommend using [] instead.</p>
-  <p>
-   Now the question is, when is () appropriate? Well I've found that the use of () is really just used for
-   readability. Since it is logically equivalent to nesting code it isn't actually necessary at all. But
-   we are Clean Coders, it's worth the effort! Take this example:</p>
-
-  <pre>
-   <code>
-   (defn hay-bale [i num]
-     (if (= i num)
-       [:h4 (str "I am hay bale #" i "!")]
-       [:h4 (str "Hello haybale #" num "!")]))
-
-   (defn hay [hay-bales-num]
-     (doall
-       (for [i (range @hay-bales-num)]
-         (hay-bale i (dec @hay-bales-num)))))
-   </code>
-  </pre>
-
-  <p>
-   Here I have an indeterminate amount of hay-bales. Each time I increment hay-bales I want all the previous
-   hay-bales to say hi to the newest addition. This is an example where re-rendering all my html is intended,
-   therefore I'll use () simply to make it more readable for other developers when they come along and see my code.
-   <b>NOTE: This code generates a warning because I didn't use unique keys for my list elements. I decided
-   not to add a key for the sake of simplicity of this example.</b>
+   In cases like this, there is no downside to choosing the optimal method for how to structure these components.
   </p>
 
  </div>
  <div class="row" style="margin: 20px">
+  <h3>When to use reagent-trackers</h3>
+
+  <p>
+   Reagent trackers work very similarly to ratoms where they can be the catalyst for a component to rerender.
+   Where they differ from ratoms is they are two layers deep, while a ratom is one. What that means is a ratom
+   directly stores information; upon update of the ratom, any components with a dereference to it update. Trackers on
+   the other act almost like a component themselves, they contain a function that dereferences a ratom, that return
+   value is updated when the state of the ratom changes. Therefore, a component is updated when it contains
+   a dereference of a tracker that contains a dereference of a ratom that updates.</p>
+  <p>
+   Trackers are advantageous for both performance and readability. First they are able to set fields to not obvious
+   function returns. For example, a tracker could be named second-cows-name that holds the field for the second
+   existing cows name, this can be incredibly helpful for collaborators to understand the intentions of what is being
+   rendered. When talking about performance, trackers can prevent unnecessary re-renders. Consider the
+   following example where the first animal in a list is tracked with a ratom.</p>
+
+  <pre>
+   <code class="hljs">
+== ANIMAL RE-RENDERS EACH BUTTON PRESS ==
+
+(<span class="hljs-keyword">def</span> animals (<span class="hljs-keyword">r/atom</span> []))
+
+(<span class="hljs-keyword">defn</span> animal []
+  [<span class="hljs-name">:div</span>
+   [<span class="hljs-name">:h3</span> <span class="hljs-string">"animals"</span>]
+   [<span class="hljs-name">:h3</span> (<span class="hljs-keyword">str</span> <span class="hljs-string">"The first animal is a "</span> (<span class="hljs-keyword">first</span> @animals))]])
+
+(<span class="hljs-keyword">defn</span> barn []
+  [<span class="hljs-name">:div</span>
+   [<span class="hljs-name">:h2</span> <span class="hljs-string">"This barn contains"</span>]
+   [animal]
+   [<span class="hljs-name">:button</span> {<span class="hljs-name">:on-click</span> #(<span class="hljs-keyword">swap!</span>! animals conj <span class="hljs-string">"cow"</span>)} <span class="hljs-string">"Add"</span>]])
+   </code>
+  </pre>
+
+  <pre>
+   <code class="hljs ml-3">
+== ANIMAL RE-RENDERS ONLY ON FIRST BUTTON PRESS ==
+
+(<span class="hljs-keyword">def</span> animals (<span class="hljs-keyword">r/atom</span> []))
+
+(<span class="hljs-keyword">defn</span> animal []
+  (<span class="hljs-keyword">let</span> [first-animal (<span class="hljs-keyword">r/track</span> #(<span class="hljs-keyword">first</span> @animals))]
+    (<span class="hljs-keyword">fn</span> []
+      [<span class="hljs-name">:div</span>
+       [<span class="hljs-name">:h3</span> <span class="hljs-string">"animals"</span>]
+       [<span class="hljs-name">:h3</span> (<span class="hljs-keyword">str</span> <span class="hljs-string">"The first animal is a "</span> @first-animal)]])))
+
+(<span class="hljs-keyword">defn</span> barn []
+  [<span class="hljs-name">:div</span>
+   [<span class="hljs-name">:h2</span> <span class="hljs-string">"This barn contains"</span>]
+   [animal]
+   [<span class="hljs-name">:button</span> {<span class="hljs-name">:on-click</span> #(<span class="hljs-keyword">swap!</span> animals conj <span class="hljs-string">"cow"</span>)} <span class="hljs-string">"Add"</span>]])
+   </code>
+  </pre>
+
+  <p>
+   The ratom is always changing value whenever the button is pressed. However, by restructuring the component to
+   use a tracker that watches the first animal in the animal list, the animal component is not re-rendered
+   each subsequent time the button is pressed, this is an optimized logic. The reason this behavior occurs, is because
+   re-renders only occur when the dereferenced value in a component changes. The first animal in the list
+   will always remain the same after each button click, therefore the dereferenced tracker stays the same.
+  </p>
+
+  </div>
+
+ <div class="row" style="margin: 20px">
   <h3>Concluding Arguments</h3>
   <p>
-   We must aim to separate our components from one another when possible, this is key to keeping our front end from
-   doing more work than necessary. I do not want to re-render my entire barn when I change a single cow.
-   And likewise, I do not want to re-render all my cows whenever I change my barn. We must recognize that Reagent
-   code is different to traditional code. Using () calls is not enough to conform to Single Responsibility Principle,
-   because by doing so, I have conjoined my two components together. As a Clean Coder we must comply to SOLID and always
-   aim to decouple our systems. Reagent, and therefore React, work different to regular code, our practices should
-   reflect that. If you follow these guidelines, your React webpage will be cleaner than ever.
+   When designing a Reagent layout, it is critical to be strategic about where data is passed, and how
+   components are extracted from each other. Balancing readability and performance can be tricky and oftentimes
+   comes down to personal judgement, but an informed coder will design the better system. When designing
+   for readability, consider who the collaborators are. Are they all coders? Are there UX designers who may have
+   less understanding of code? Heavily extracting functions will make it difficult to follow for others, and typically
+   gains little to no optimization. When designing for performance, anticipate the cost, or future cost of a component.
+   Will this component be rendered many times? Will this component grow in complexity? Sometimes these questions are
+   hard to answer, a system can be vastly different when developed for years longer. Know the system, understand which
+   elements appear complex, and which ones appear commonly. When front-end performance becomes noticeably slower,
+   an informed Reagent user will know how to make a list of suspects to refactor.
   </p>
  </div>
 </div>
