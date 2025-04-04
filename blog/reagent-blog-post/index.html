@@ -47,11 +47,11 @@
    to establish practices that can be followed and built off. With these methodologies, it is important to utilize them
    in all frameworks of code, including the more atypical ones like React.</p>
   <p>
-   <a href="https://react.dev/">React</a> is a javascript framework that uses the component to
+   <a href="https://react.dev/">React</a> is a JavaScript library that uses the component to
    create markup that is both modular and reusable. Due to the nature of the framework existing for a markup
    language, there need not be as much worry on finding the aforementioned balance. There is little presence of
    logic, rather markup is about structure. Even so, React components should be treated the same as any other code,
-   Conforming to this balance that makes the code both easy to read, and optimal. At Clean Coders, clojure is the
+   Conforming to this balance that makes the code both easy to read, and optimal. At Clean Coders, Clojure is the
    preferred language, therefore to properly demonstrate an establishment of balance,
    <a href="https://reagent-project.github.io/">Reagent</a> shall be used over standard React because it
    "provides a minimalistic interface between ClojureScript and React."</p>
@@ -121,7 +121,7 @@
   <pre>
    <code class="hljs">
 (<span class="hljs-keyword">defn</span> <span class="hljs-title">barn</span> []
- (<span class="hljs-keyword">let</span> [cow-num (<span class="hljs-keyword">r/atom</span> 0)]
+ (<span class="hljs-keyword">let</span> [cow-num (<span class="hljs-keyword">r/atom</span> 0)] [
    (<span class="hljs-keyword">fn</span> []
      [<span class="hljs-name">:div</span>
       [<span class="hljs-name">:h2</span> <span class="hljs-string">"This barn contains"</span>]
