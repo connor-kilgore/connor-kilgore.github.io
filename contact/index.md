@@ -1,5 +1,5 @@
 ---
-title: Projects
+title: Contact
 feature_image: "/assets/photos/contact-hero-image.png"
 styles:
   - /assets/styles.scss
