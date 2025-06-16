@@ -3,7 +3,7 @@ title: Welcome to my website!
 feature_image: "/assets/photos/home-hero-image.png"
 ---
 
-My name is Connor Kilgore. I am an american software developer. I completed my bachelor's in computer science at 
+My name is Connor Kilgore. I am an American software developer. I completed my bachelor's in computer science at 
 [Northern Arizona University]("https://www.nau.edu") in May 2023. I am particularly interested in backend development 
 and working with database systems. I am most proficient in Java and C. Outside of school work, I am passionate about
 my personal computer science related projects. Particularly I like to make games on the platform 
