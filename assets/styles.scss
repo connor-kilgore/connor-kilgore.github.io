@@ -1,0 +1,95 @@
+---
+title: false
+styles: true
+---
+
+@import "alembic";
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+.card {
+    flex: 1 1 250px;
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-decoration: none;
+    color: inherit;
+    padding: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
+}
+.card p {
+    margin: 0;
+    color: #555;
+}
+
+.video-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+.video-row iframe {
+    flex: 1 1 560px;
+    max-width: 100%;
+    display: block;
+}
+
+.image-row {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.image-row img {
+    display: block;
+    height: auto;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.contact-list li {
+    margin-bottom: 1rem;
+}
+.contact-list a {
+    display: block;
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    text-decoration: none;
+    color: inherit;
+    padding: 1rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.contact-list a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.contact-icon {
+    vertical-align: middle;
+    width: 24px;
+    height: 24px;
+    margin-right: 0.75rem;
+}
+.contact-label {
+    vertical-align: middle;
+    font-size: 1rem;
+    font-weight: 500;
+}

@@ -1,8 +1,6 @@
 ---
-title: Hello!
-feature_image: "https://picsum.photos/1300/400?image=989"
-feature_text: |
-  ## Welcome to my website
+title: Welcome to my website!
+feature_image: "/assets/photos/home-hero-image.png"
 ---
 
 My name is Connor Kilgore. I am an american software developer. I completed my bachelor's in computer science at 

@@ -3,67 +3,77 @@ remote_theme: daviddarnes/alembic@main
 
 # File excludes
 exclude:
-- README.md
-- Gemfile
-- Gemfile.lock
+  - README.md
+  - Gemfile
+  - Gemfile.lock
 
 # Set plugins
 plugins:
-- jekyll-sitemap
-- jekyll-mentions
-- jekyll-paginate
-- jekyll-seo-tag
-- jekyll-redirect-from
-- jekyll-feed
-- jekyll-commonmark
-- jekyll-include-cache
-- jemoji
-- jekyll-remote-theme
+  - jekyll-sitemap
+  - jekyll-mentions
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+  - jekyll-feed
+  - jekyll-commonmark
+  - jekyll-include-cache
+  - jemoji
+  - jekyll-remote-theme
 
 # Site settings
 url: 'https://mydomain.com'
 baseurl: ''
-title: 'My website'
+title: 'Connor Kilgore - Portfolio'
 description: 'This is my new website'
 permalink: pretty
 
 # Pagination
-paginate: 5
+paginate: 10
 paginate_path: blog/page:num
 
 # Header nav
 navigation_header:
-- title: Home
-  url: /
-- title: Blog
-  url: /blog/
+  - title: Home
+    url: /
+  - title: Blog
+    url: /blog/
+  - title: Projects
+    url: /projects/
+  - title: Contact
+    url: /contact/
 
 # Footer nav
 navigation_footer:
-- title: Back to top
-  url: "#top"
+  - title: Back to top
+    url: "#top"
 
 # Collections
 collections:
-  posts:
-    title: Posts
+  apprenticeship-posts:
     output: true
-    description: "My thoughts and ideas"
-    feature_text: |
-      Welcome to my blog
-    feature_image: "https://picsum.photos/2560/600?image=866"
+    permalink: /posts/apprenticeship/:name/
+
+  cleancoders-posts:
+    output: true
+    permalink: /posts/cleancoders/:name/
 
 # Collection settings
 defaults:
-  -
-    scope:
+  - scope:
       path: ""
       type: "posts"
     values:
       layout: post # Set the default layout for posts
-  -
-    scope:
+  - scope:
       path: ""
       type: "pages"
     values:
       layout: page # Set the default layout for pages
+  - scope:
+      type: "apprenticeship-posts"
+    values:
+      layout: "post"
+  - scope:
+      type: "cleancoders-posts"
+    values:
+      layout: "post"
