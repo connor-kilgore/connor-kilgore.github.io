@@ -9,6 +9,6 @@ and working with database systems. I am most proficient in Java and C. Outside o
 my personal computer science related projects. Particularly I like to make games on the platform 
 [Roblox]("https://www.roblox.com"). More information on that can be seen in [Projects]("/projects/roblox").
 I also have many hobbies, I love to play video games, watch horror movies and anime, read sci-fi fantasy novels, and 
-learn about astronomy. Currently I am employed at [Clean Coders LLC.]("https://cleancoders.com/").
+learn about astronomy. Currently I am employed at [Clean Coders LLC]("https://cleancoders.com/").
 
 ![photo of me](/assets/photos/best.jpg)
