@@ -8,10 +8,8 @@ title: Clean Coders Blog Posts
 
 Here is where I keep an archive of all my published blog posts
 
-<ul>
+<div class="card-container">
   {% for post in site.cleancoders-posts %}
-    <ul>
-      <a href="{{ post.url }}">{{ post.title }}</a> — {{ post.date | date: "%B %d, %Y" }}
-    </ul>
+      <a href="{{ post.url }}" class="card"><h3>{{ post.title }}</h3> <p>{{ post.date | date: "%B %d, %Y" }}</p> </a>
   {% endfor %}
-</ul>
+</div>
