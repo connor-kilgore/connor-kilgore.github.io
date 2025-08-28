@@ -17,7 +17,7 @@ feature_image: "/assets/photos/home-hero-image.png"
   </div>
 
   <div style="flex: 1; text-align: center;">
-    <img src="/assets/photos/best.JPG" alt="photo of me" style="max-width: 100%; border-radius: 10px;">
+    <img src="/assets/photos/best.jpg" alt="photo of me" style="max-width: 100%; border-radius: 10px;">
   </div>
 
 </div>
